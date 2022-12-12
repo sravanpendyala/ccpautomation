@@ -40,24 +40,9 @@ public class ItineraryForUsPortPage extends NCLEnvData {
                 case "itineraries" -> {
                     flag = nclWebActions.clickValue(value, getObjMap("ItineraryForUsPortPage.itineraries"), key);
                 }
-                case "vesselitinerary" -> {
-                    flag = nclWebActions.clickValue(value, getObjMap("ItineraryForUsPortPage.vessselitinerary"), key);
-                }
                 case "newvesselitinerary" -> {
                     //nclWebActions.webDriver.switchTo().frame(nclWebActions.webDriver.findElement(By.xpath("//html[@dir='ltr']")));
                     flag = nclWebActions.clickValue(value, getObjMap("ItineraryForUsPortPage.newvesselitinerary"), key);
-                }
-                case "companyname" -> {
-
-                    flag = nclWebActions.clickValue(value, getObjMap("ItineraryForUsPortPage.companyname"), key);
-                }
-                case "companynametxt" -> {
-
-                    flag = nclWebActions.setValue(value, getObjMap("ItineraryForUsPortPage.companynametxt"), key);
-                    if (flag)
-                        flag = nclWebActions.clickValue(value, getObjMap("ItineraryForUsPortPage.companynametxt"), key);
-                    //flag = nclWebActions.setValue(value, getObjMap("ItineraryForUsPortPage.companynametxt"), key);
-
                 }
 
                 case "vesseloffload" -> {
@@ -76,14 +61,20 @@ public class ItineraryForUsPortPage extends NCLEnvData {
                     }
                     catch (Exception e) {
                     }
-
-
                 }
                 case "itineraryday" -> {
                     flag = nclWebActions.setValue(value, getObjMap("ItineraryForUsPortPage.itineraryday"), key);
                 }
                 case "port" -> {
-                    flag = nclWebActions.selectPopup(value, getObjMap("ItineraryForUsPortPage.port"), key);
+                    flag = nclWebActions.clickValue(value, getObjMap("ItineraryForUsPortPage.port"), key);
+                }
+                case "portvalue" -> {
+                    String[] b = value.split("\\|");
+                    try {
+                        flag = nclWebActions.clickValue(b[1], getObjMap("ItineraryForUsPortPage.portvalue",b[0]), key);
+                    }
+                    catch (Exception e) {
+                    }
                 }
                 case "exportform1" -> {
                     flag = nclWebActions.clickValue(value, getObjMap("ExportOfflaodFormPdf.exportform1"), key);
@@ -97,10 +88,17 @@ public class ItineraryForUsPortPage extends NCLEnvData {
                 case "offloadingallowed" -> {
                     flag = nclWebActions.clickValue(value, getObjMap("ItineraryForUsPortPage.offloadingallowed"), key);
                 }
-                case "savebutton" -> {
-                    flag = nclWebActions.clickValue(value, getObjMap("ItineraryForUsPortPage.save"), key);
+                case "offloadingallowedvalue" -> {
+                    String[] b = value.split("\\|");
+                    try {
+                        flag = nclWebActions.clickValue(b[1], getObjMap("ItineraryForUsPortPage.offloadingallowedvalue",b[0]), key);
+                    }
+                    catch (Exception e) {
+                    }
                 }
-
+                case "savebutton" -> {
+                    flag = nclWebActions.clickValue(value, getObjMap("ItineraryForUsPortPage.savebutton"), key);
+                }
                 case "email" -> {
                     flag = nclWebActions.clickValue(value, getObjMap("EmailOffloadFormPage.email"), key);
                 }

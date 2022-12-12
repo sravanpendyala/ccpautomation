@@ -18,6 +18,22 @@ public class Dashboard {
 
     @And("click on {string} link option")
     public void clickOnLinkOption(String data) { dashboardpage.performActions(data); }
+
+    @When("click on {string} in dashboard page")
+    public void clickOnInDashboardPage(String data) { dashboardpage.performActions(data); }
+    @Then("click on the {string} in the settings")
+    public void clickOnTheInTheSettings(String data) { dashboardpage.performActions(data);
+    }
+    @And("click on {string} option link")
+    public void clickOnOptionLink(String data) { dashboardpage.performActions(data); }
+    @When("click on {string} button")
+    public void clickOnButton(String data) { dashboardpage.performActions(data); }
+    @Then("enter data into {string} dropdown")
+    public void enterDataIntoDropdown(String data) { dashboardpage.performActions(data); }
+    @When("click in to {string} button")
+    public void clickInToButton(String data) { dashboardpage.performActions(data); }
+
+
 }
 
 

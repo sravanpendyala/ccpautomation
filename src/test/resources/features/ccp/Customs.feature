@@ -2,7 +2,7 @@
   Feature: Verify Offload Form Status AmendInitiated
     Background: Login to application using purser role
       Given navigate to nclccp application
-      When enter Username, password and click on "CustomsLogin" button
+      When enter username, password and click on "CustomsLogin" button
       #Then homepage should be displayed "DashboardPg"
   @TC_034
   Scenario: offload form status AmendInitiated

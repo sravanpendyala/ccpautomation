@@ -2,7 +2,7 @@
   Feature: Verify Offload Form Status RecallInitiated
     Background: Login to application using purser role
       Given navigate to nclccp application
-      When enter Username, password and click on "Login" button
+      When enter username, password and click on "Login" button
       Then homepage should be displayed "DashboardPg"
   @TC_013
   Scenario: offload form status RecallInitiated

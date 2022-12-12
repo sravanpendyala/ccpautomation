@@ -98,6 +98,10 @@ public class EditOffloadForm {
     @And("Enter {string} option for email button")
     public void enterOptionForEmailButton(String data) {editOffloadFormPage.performActions(data);
     }
+
+    @And("click on {string} drpdwn in offload form")
+    public void clickOnDrpdwnInOffloadForm(String data) {editOffloadFormPage.performActions(data);
+    }
 }
 
 

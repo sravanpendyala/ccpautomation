@@ -15,15 +15,12 @@ public class Home {
     HomePage homePage;
 
     @Given("navigate to nclccp application")
-    public void navigateToNclccpApplication() throws IOException {
-        homePage.launchApplication();
-    }
+    public void navigateToNclccpApplication() throws IOException { homePage.launchApplication(); }
     @Then("homepage should be displayed {string}")
-    public void homepageShouldBeDisplayed(String data) throws FilloException, IOException {
-        homePage.performActions(data);
-    }
+    public void homepageShouldBeDisplayed(String data) { homePage.performActions(data); }
     @When("enter username, password and click on {string} button")
     public void enterUsernamePasswordAndClickOnButton(String data) {
         homePage.performActions(data);
     }
+
 }

@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
                     "com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
         dryRun = false,
         glue = "com.ncl.ccp",
-        tags = "@TC_020")
+        tags = "")
 
 
 public class TestRunnerccp {

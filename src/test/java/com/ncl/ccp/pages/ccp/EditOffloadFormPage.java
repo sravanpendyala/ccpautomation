@@ -36,7 +36,7 @@ public class EditOffloadFormPage extends NCLEnvData {
                     flag = nclWebActions.clickValue(value, getObjMap("EditOffloadForm.Editbutton"), key);
                 }
                 case "edit1" -> {
-                    flag = nclWebActions.clickValue(value, getObjMap("ExportOfflaodFormPdf.edit1"), key);
+                    flag = nclWebActions.clickValue(value, getObjMap("EditOffloadForm.edit1"), key);
                 }
                 case "Recallbutton" -> {
                     flag = nclWebActions.clickValue(value, getObjMap("EditOffloadForm.Recallbutton"), key);

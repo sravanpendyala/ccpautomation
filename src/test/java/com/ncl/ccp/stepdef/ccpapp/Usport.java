@@ -40,8 +40,6 @@ public class Usport {
     public void enterAndClickOnSearchButton(String data) {
         usportPage.performActions(data);
     }
-    @And("click on {string} button")
-    public void clickOnButton(String data) { usportPage.performActions(data); }
 
     //mamatha//
     @When("click to {string} offload option")
@@ -53,9 +51,6 @@ public class Usport {
 
     @And("click on {string} option")
     public void clickOnOption(String data) { usportPage.performActions(data); }
-
-    //@And("click on {string} button")
-  //  public void clickOnButton(String data) { usportPage.performActions(data); }
 
     @Then("in new offload form page Select {string}")
     public void inNewOffloadFormPageSelect(String data) { usportPage.performActions(data); }
@@ -113,4 +108,7 @@ public class Usport {
 
     @And("enter Item valuation details in {string} valuation type,AcquisitionUnitCost and click on save")
     public void enterItemValuationDetailsInValuationTypeAcquisitionUnitCostAndClickOnSave(String data) { usportPage.performActions(data); }
+
+ @And("click on {string} button in offload")
+ public void clickOnButtonInOffload(String data) { usportPage.performActions(data); }
 }
