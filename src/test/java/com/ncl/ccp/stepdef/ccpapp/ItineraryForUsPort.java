@@ -15,36 +15,22 @@ public class ItineraryForUsPort {
     public void navigateToOptionFromItineraries(String data) {
         itineraryForUsPortPage.performActions(data);
     }
-
     @Then("offload company vessel code itinerary day should be displayed {string}")
-    public void offloadCompanyVesselCodeItineraryDayShouldBeDisplayed(String data) throws InterruptedException {
-        itineraryForUsPortPage.performActions(data);
+    public void offloadCompanyVesselCodeItineraryDayShouldBeDisplayed(String data) { itineraryForUsPortPage.performActions(data);
     }
-
-
     @Then("click on {string} select value in new vessel itinerary")
     public void clickOnSelectValueInNewVesselItinerary(String data) {
         itineraryForUsPortPage.performActions(data);
     }
-
     @And("click {string} select value in the window")
-    public void clickSelectValueInTheWindow(String data) throws InterruptedException {
-        itineraryForUsPortPage.performActions(data);
+    public void clickSelectValueInTheWindow(String data) { itineraryForUsPortPage.performActions(data);
     }
-
     @Then("enter {string}")
-    public void enter(String data) throws InterruptedException {
-        itineraryForUsPortPage.performActions(data);
-    }
-
+    public void enter(String data) { itineraryForUsPortPage.performActions(data); }
     @When("click on {string} select value")
     public void clickOnSelectValue(String data) { itineraryForUsPortPage.performActions(data); }
-
     @And("enter {string} in the window")
     public void enterInTheWindow(String data) { itineraryForUsPortPage.performActions(data); }
-
-    @When("click on {string} change  data")
-    public void clickOnChangeData(String data) { itineraryForUsPortPage.performActions(data); }
     @And("enter data {string} dropdown")
     public void enterDataDropdown(String data) {
         itineraryForUsPortPage.performActions(data);
@@ -58,7 +44,13 @@ public class ItineraryForUsPort {
 
     @And("click on {string} in new vessel itinerary form")
     public void clickOnInNewVesselItineraryForm(String data) { itineraryForUsPortPage.performActions(data); }
-}
+
+    @When("click on {string} change data")
+    public void clickOnChangeData(String data) { itineraryForUsPortPage.performActions(data); }
+
+    @And("click on {string} checkbox")
+    public void clickOnCheckbox(String data) { itineraryForUsPortPage.performActions(data); }
+  }
 
 
 

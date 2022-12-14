@@ -205,7 +205,8 @@ public class NCLWebActions {
                 if (!flag) errMessage = "Element " + elementName + " NOT displayed";
             }
             case "CLICK_TAB" -> {
-                flag = executeCommands.elementActions(webDriver, Commands.IS_ENABLED, locator, value[0], 10);
+                flag = executeCommands.elementActions(webDriver, Commands.CLICK, locator, value[0], 10);
+                webDriver.findElement(By.xpath(locator)).sendKeys(Keys.TAB);
                 if (!flag) errMessage = "Element " + elementName + " NOT enabled";
             }
             case "IS_ENABLED" -> {

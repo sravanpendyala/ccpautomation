@@ -48,10 +48,12 @@ import java.util.Enumeration;
                             Thread.sleep(5000);
                         } catch (Exception ex) {
                         }
-
                     }
                     case "Edit" -> {
                         flag = nclWebActions.clickValue(value, getObjMap("EmailOffloadFormPage.Edit"), key);
+                    }
+                    case "editicon" -> {
+                        flag = nclWebActions.clickValue(value, getObjMap("EmailOffloadFormPage.editicon"), key);
                     }
                     case "NotesFields" -> {
                         //String b = "test";

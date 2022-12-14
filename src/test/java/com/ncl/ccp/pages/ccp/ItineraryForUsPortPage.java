@@ -89,6 +89,9 @@ public class ItineraryForUsPortPage extends NCLEnvData {
                     flag = nclWebActions.clickValue(value, getObjMap("ItineraryForUsPortPage.offloadingallowed"), key);
                 }
                 case "offloadingallowedvalue" -> {
+                    flag = nclWebActions.setValueAndPressEnterKey(value, getObjMap("ItineraryForUsPortPage.offloadingallowedvalue"), key);
+                }
+                case "offloadingallowedvalue1" -> {
                     String[] b = value.split("\\|");
                     try {
                         flag = nclWebActions.clickValue(b[1], getObjMap("ItineraryForUsPortPage.offloadingallowedvalue",b[0]), key);
@@ -98,6 +101,9 @@ public class ItineraryForUsPortPage extends NCLEnvData {
                 }
                 case "savebutton" -> {
                     flag = nclWebActions.clickValue(value, getObjMap("ItineraryForUsPortPage.savebutton"), key);
+                }
+                case "anchoredchkbx" -> {
+                    flag = nclWebActions.clickValue(value, getObjMap("ItineraryForUsPortPage.anchoredchkbx"), key);
                 }
                 case "email" -> {
                     flag = nclWebActions.clickValue(value, getObjMap("EmailOffloadFormPage.email"), key);

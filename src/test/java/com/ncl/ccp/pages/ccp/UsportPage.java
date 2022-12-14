@@ -33,7 +33,7 @@ public class UsportPage extends NCLEnvData {
                 case "Vesselsoffloads" -> {
                     flag = nclWebActions.clickValue(value, getObjMap("UsportPage.Vesselsoffloads"), key);
                 }
-                case "Offloadresponses" -> {
+                case "Offloadresponse" -> {
                     flag = nclWebActions.clickValue(value, getObjMap("UsportPage.Offloadresponse"), key);
                 }
                 case "oedrpages" -> {

@@ -1,6 +1,5 @@
 package com.ncl.ccp.pages.ccp;
 
-import com.ncl.ccp.data.ReadExcelData;
 import com.ncl.ccp.common.NCLEnvData;
 import com.ncl.ccp.common.NCLWebActions;
 import com.ncl.ccp.data.OrderedHashtable;
@@ -21,6 +20,10 @@ public class HomePage extends NCLEnvData {
 
     public void launchApplication() {
         nclWebActions.launchApplication(getAppConfigVal("test.app.url"));
+    }
+
+       public void launchShoreSideApplication() {
+        nclWebActions.launchApplication(getAppConfigVal("test.app.shoresideurl"));
     }
 
     public void performActions(String dataID) {
@@ -49,8 +52,7 @@ public class HomePage extends NCLEnvData {
                     flag = nclWebActions.clickValue(value, getObjMap("HomePage.UserLoginname",a), key);
                 }
                 case "DashboardPg" -> {
-                    String a = "mamatha.purser";
-                    flag = nclWebActions.clickValue(value, getObjMap("HomePage.UserLoginname",a), key);
+                    flag = nclWebActions.clickValue(value, getObjMap("HomePage.DashboardPg"), key);
                 }
                 default -> {
                     throw new RuntimeException("Field " + key + " is not defined in page " + sheetName + " class");

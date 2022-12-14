@@ -77,7 +77,7 @@ public enum Commands {
             try {
                 Wait<WebDriver> wait = new FluentWait<>(driver)
                         .withTimeout(Duration.ofSeconds(timeOut))
-                        .pollingEvery(Duration.ofSeconds(1))
+                        .pollingEvery(Duration.ofSeconds(5))
                         .ignoring(NoSuchElementException.class,
                                 StaleElementReferenceException.class );
                 wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(locator)));
@@ -94,7 +94,7 @@ public enum Commands {
             try {
                 Wait<WebDriver> wait = new FluentWait<>(driver)
                         .withTimeout(Duration.ofSeconds(timeOut))
-                        .pollingEvery(Duration.ofSeconds(1))
+                        .pollingEvery(Duration.ofSeconds(5))
                         .ignoring(NoSuchElementException.class,
                                 StaleElementReferenceException.class );
                 wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(locator)));

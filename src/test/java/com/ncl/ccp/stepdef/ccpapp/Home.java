@@ -1,6 +1,5 @@
 package com.ncl.ccp.stepdef.ccpapp;
 
-import com.codoid.products.exception.FilloException;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -15,12 +14,11 @@ public class Home {
     HomePage homePage;
 
     @Given("navigate to nclccp application")
-    public void navigateToNclccpApplication() throws IOException { homePage.launchApplication(); }
+    public void navigateToNclccpApplication() { homePage.launchApplication(); }
     @Then("homepage should be displayed {string}")
     public void homepageShouldBeDisplayed(String data) { homePage.performActions(data); }
     @When("enter username, password and click on {string} button")
-    public void enterUsernamePasswordAndClickOnButton(String data) {
-        homePage.performActions(data);
-    }
-
+    public void enterUsernamePasswordAndClickOnButton(String data) { homePage.performActions(data); }
+    @Given("navigate to nclccp_shoreside application")
+    public void navigateToNclccp_shoresideApplication() { homePage.launchShoreSideApplication(); }
 }
