@@ -32,8 +32,6 @@ public class Dashboard {
     public void enterDataIntoDropdown(String data) { dashboardpage.performActions(data); }
     @When("click in to {string} button")
     public void clickInToButton(String data) { dashboardpage.performActions(data); }
-
-
 }
 
 

@@ -19,7 +19,7 @@ public class DashboardPage extends NCLEnvData {
     public void performActions(String dataID) {
         boolean flag = false;
 
-         OrderedHashtable data = readData(sheetName, dataID);
+        OrderedHashtable data = readData(sheetName, dataID);
 
         Enumeration<String> keys = data.enumerateKeys();
 
@@ -31,6 +31,12 @@ public class DashboardPage extends NCLEnvData {
                 case "settingsbutton" -> {
                     flag = nclWebActions.clickValue(value, getObjMap("DashboardPage.settingsbutton"), key);
                 }
+                case "userprofile" -> {
+                    flag = nclWebActions.clickValue(value, getObjMap("DashboardPage.userprofile"), key);
+                }
+                case "logoutbutton" -> {
+                    flag = nclWebActions.clickValue(value, getObjMap("DashboardPage.logoutbutton"), key);
+                }
                 case "cvcidpage" -> {
                     flag = nclWebActions.setValue(value, getObjMap("DashboardPage.cvcidpage"), key);
                 }
@@ -38,7 +44,7 @@ public class DashboardPage extends NCLEnvData {
                     flag = nclWebActions.clickValue(value, getObjMap("DashboardPage.itineraries"), key);
                 }
                 case "offloadeventsLnk" -> {
-                flag = nclWebActions.clickValue(value, getObjMap("DashboardPage.offloadeventsLnk"), key);
+                    flag = nclWebActions.clickValue(value, getObjMap("DashboardPage.offloadeventsLnk"), key);
                 }
                 case "newvesselitinerary" -> {
                     //nclWebActions.webDriver.switchTo().frame(nclWebActions.webDriver.findElement(By.xpath("//html[@dir='ltr']")));
@@ -49,15 +55,14 @@ public class DashboardPage extends NCLEnvData {
                     flag = nclWebActions.clickValue(value, getObjMap("DashboardPage.companyname"), key);
                 }
                 case "companynametxt" -> {
-                        String[] a = value.split("\\|");
-                        try {
-                            flag = nclWebActions.clickValue(a[1], getObjMap("DashboardPage.companynametxt",a[0]), key);
-                        }
-                        catch (Exception e) {
-                        }
-                        nclWebActions.waitForElement("DashboardPage.companynametxt");
+                    String[] a = value.split("\\|");
+                    try {
+                        flag = nclWebActions.clickValue(a[1], getObjMap("DashboardPage.companynametxt",a[0]), key);
                     }
-
+                    catch (Exception e) {
+                    }
+                   // nclWebActions.waitForElement("DashboardPage.companynametxt");
+                }
                 case "vesseltxt" -> {
                     String[] b = value.split("\\|");
                     try {

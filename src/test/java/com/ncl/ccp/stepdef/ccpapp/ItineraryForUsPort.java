@@ -50,7 +50,13 @@ public class ItineraryForUsPort {
 
     @And("click on {string} checkbox")
     public void clickOnCheckbox(String data) { itineraryForUsPortPage.performActions(data); }
-  }
+
+    @Then("{string} itineraries page should be displayed")
+    public void itinerariesPageShouldBeDisplayed(String data) { itineraryForUsPortPage.performActions(data); }
+
+    @When("enter {string} in itineraries from date")
+    public void enterInItinerariesFromDate(String data) { itineraryForUsPortPage.performActions(data); }
+}
 
 
 

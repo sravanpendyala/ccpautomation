@@ -23,6 +23,7 @@ import org.springframework.stereotype.Component;
 
 import java.time.Duration;
 import java.util.ArrayList;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 //import static com.ncl.ccp.pages.ccp.HomePage;
@@ -49,9 +50,10 @@ public class NCLWebActions {
         webDriver = nclWebDriver.launchApp(appURL);
         return flag;
     }
-    public boolean sendKeyboardValue(String action,String locator) {
+
+    public boolean sendKeyboardValue(String locator) {
         boolean flag = false;
-        flag = executeCommands.elementActions(webDriver, Commands.SET_VALUE, locator, action, 10);
+        // flag = executeCommands.elementActions(webDriver, Commands.WAIT_FOR_ELEMENT_CLICKABLE, locator, action, 10);
         webDriver.findElement(By.xpath(locator)).sendKeys(Keys.ENTER);
         return flag;
     }
@@ -75,11 +77,15 @@ public class NCLWebActions {
                 flag = executeCommands.elementActions(webDriver, Commands.IS_ENABLED, locator, action, 10);
                 if (!flag) errMessage = "Element " + elementName + " NOT enabled";
             }
+            case "FILE_UPLOAD"-> {
+                flag = executeCommands.elementActions(webDriver, Commands.FILE_UPLOAD, locator, value[1], 10);
+                if (!flag) errMessage = "Element " + elementName + " failed to set value";
+            }
 
             case "CLEAR_ENTER" -> {
                 flag = executeCommands.elementActions(webDriver, Commands.CLEAR, locator, action, 10);
                 if (flag)
-                flag = executeCommands.elementActions(webDriver, Commands.SET_VALUE, locator, action, 10);
+                    flag = executeCommands.elementActions(webDriver, Commands.SET_VALUE, locator, action, 10);
                 if (!flag) errMessage = "Element " + elementName + " NOT enabled";
             }
 
@@ -110,6 +116,7 @@ public class NCLWebActions {
 
         return flag;
     }
+
     public boolean setValueAndPressEnterKey(String action, String locator, String elementName) {
         boolean flag = false;
         String[] value;
@@ -148,8 +155,13 @@ public class NCLWebActions {
                 executeCommands.elementActions(webDriver, Commands.CLICK, locator, action, 10);
                 executeCommands.elementActions(webDriver, Commands.CLEAR, locator, action, 10);
                 flag = executeCommands.elementActions(webDriver, Commands.SET_VALUE, locator, action, 10);
+                try {
+                    Thread.sleep(5000);
+                } catch (Exception e) {
+                }
                 webDriver.findElement(By.xpath(locator)).sendKeys(Keys.ENTER);
-              //ExpectedConditions.visibilityOfAllElements(webDriver.findElements(By.xpath(locator)));
+                //webDriver.findElement(By.xpath(locator)).sendKeys(Keys.TAB);
+                //ExpectedConditions.visibilityOfAllElements(webDriver.findElements(By.xpath(locator)));
                 if (!flag) errMessage = "Element " + elementName + " failed to set value";
             }
         }
@@ -202,6 +214,7 @@ public class NCLWebActions {
         switch (value[0]) {
             case "IS_DISPLAYED" -> {
                 flag = executeCommands.elementActions(webDriver, Commands.IS_DISPLAYED, locator, value[0], 10);
+
                 if (!flag) errMessage = "Element " + elementName + " NOT displayed";
             }
             case "CLICK_TAB" -> {
@@ -217,13 +230,25 @@ public class NCLWebActions {
                 flag = executeCommands.elementActions(webDriver, Commands.WAIT_FOR_ELEMENT_CLICKABLE, locator, value[0], 10);
                 if (flag) {
                     try {
-                        Thread.sleep(1000);
+                        Thread.sleep(5000);
                         flag = executeCommands.elementActions(webDriver, Commands.CLICK, locator, action, 10);
                     } catch (InterruptedException e) {
                         throw new RuntimeException(e);
                     }
                 }
-                  if (!flag) errMessage = "Element " + elementName + " NOT enabled";
+                if (!flag) errMessage = "Element " + elementName + " NOT enabled";
+            }
+            case "CLICK_WAIT" -> {
+                flag = executeCommands.elementActions(webDriver, Commands.WAIT_FOR_ELEMENT_CLICKABLE, locator, value[0], 10);
+                if (flag) {
+                    try {
+                        flag = executeCommands.elementActions(webDriver, Commands.CLICK, locator, action, 10);
+                        Thread.sleep(5000);
+                    } catch (InterruptedException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+                if (!flag) errMessage = "Element " + elementName + " NOT enabled";
             }
             case "NOT_DISPLAYED" -> {
                 flag = executeCommands.elementActions(webDriver, Commands.IS_DISPLAYED, locator, action, 10);
@@ -237,10 +262,9 @@ public class NCLWebActions {
                 //Syntax " PREFILL|EXP_VALUE Or PREFILL|GET_VAR
                 if (value[1].equals("GET_VAR")) {
                     value[1] = NCLHooks.getRuntimeData(NCLHooks.CURR_PAGE + "." + elementName);
+                } else {
+                    value[1] = NCLHooks.getRuntimeData(value[1]);
                 }
-//                else {
-//                    value[1] = NCLHooks.getRuntimeData(value[1]);
-//                }
 
                 flag = executeCommands.elementActions(webDriver, Commands.PREFILL, locator, value[1], 10);
                 if (!flag) errMessage = "Element " + elementName + " value not matched with " + value[1];
@@ -403,7 +427,7 @@ public class NCLWebActions {
     public boolean waitForElementClose(String locator) {
         boolean flag = false;
         try {
-            Wait<WebDriver> wait  = new FluentWait<>(webDriver)
+            Wait<WebDriver> wait = new FluentWait<>(webDriver)
                     .withTimeout(Duration.ofSeconds(3))
                     .pollingEvery(Duration.ofSeconds(1))
                     .ignoring(NoSuchElementException.class,
@@ -414,6 +438,7 @@ public class NCLWebActions {
         }
         return flag;
     }
+
     public boolean waitForElement(String locator) {
         boolean flag = false;
         try {
@@ -434,6 +459,7 @@ public class NCLWebActions {
         }
         return flag;
     }
+
     public boolean verifyStateRoomTypes(String value, String locator, String key) {
         List<WebElement> rowslist = webDriver.findElements(By.xpath(locator));
 
@@ -510,6 +536,19 @@ public class NCLWebActions {
         return value;
     }
 
+    public String offLoadEventCode(String locator, String value) {
+        String finalOutput = "NCL_Gem_";
+        String initialString = "Ship:Gem on:Dec 28, 2022 at: (PHI-Philipsburg) {CW-Curaçao}";
+        String dateOutcome = initialString.split(":")[2].replace(",", "").replace(" at", "");
+        String[] s1 = initialString.split("\\(");
+//        System.out.println(s1[1].split("-")[0]);
+        finalOutput = finalOutput + s1[1].split("-")[0] + "_" + dateOutcome;
+        System.out.println(finalOutput);
+        System.out.println(finalOutput.equalsIgnoreCase("NCL_Gem_PHI_Dec 28 2022"));
+        //String value = webDriver.findElement(By.xpath(locator)).getText();
+        return value;
+    }
+
     public String randomGenderSelection(String locator) {
         List<WebElement> list = webDriver.findElements(By.xpath(locator));
         for (WebElement element : list) {
@@ -519,6 +558,39 @@ public class NCLWebActions {
             }
         }
         return null;
+    }
+
+    public String randomCalenderSelection() {
+        GregorianCalendar gc = new GregorianCalendar();
+        int year = randBetween(2023, 2025);
+        gc.set(gc.YEAR, year);
+        int dayOfYear = randBetween(1, gc.getActualMaximum(gc.DAY_OF_YEAR));
+        gc.set(gc.DAY_OF_YEAR, dayOfYear);
+        return ((gc.get(gc.MONTH) + 1) + "/" + gc.get(gc.DAY_OF_MONTH) + "/" + gc.get(gc.YEAR));
+    }
+
+    //to perform Scroll on application using Selenium
+    public void scrollDown() {
+        JavascriptExecutor js = (JavascriptExecutor) webDriver;
+        js.executeScript("window.scrollBy(0,350)", "");
+        js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
+    }
+    public void scrollByElement(String locator) {
+        //Locating element by link text and store in variable "Element"
+        WebElement Element = webDriver.findElement(By.linkText("Try Selenium Testing For Free"));
+        JavascriptExecutor js = (JavascriptExecutor) webDriver;
+        // Scrolling down the page till the element is found
+        js.executeScript("arguments[0].scrollIntoView();", locator);
+
+    }
+    public void scrollDown1(String locator) {   boolean flag = false;
+        int count = 0;
+        List<WebElement> rows = webDriver.findElements(By.xpath(locator));
+        JavascriptExecutor js = (JavascriptExecutor) webDriver;
+    js.executeScript("arguments[0].scrollIntoView();",locator);
+}
+    public static int randBetween(int start, int end) {
+        return start + (int)Math.round(Math.random() * (end - start));
     }
 
     private ArrayList getHeaderNumbers(String locator, ArrayList headers, String key) {

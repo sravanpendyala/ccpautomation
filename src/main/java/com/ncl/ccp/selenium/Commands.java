@@ -115,6 +115,20 @@ public enum Commands {
             return flag;
         }
     },
+    FILE_UPLOAD {
+        @Override
+        public boolean executeCommand(WebDriver driver, String locator, String value, int timeOut) {
+            boolean flag = false;
+            try {
+                wait = new WebDriverWait(driver, Duration.ofSeconds(timeOut));
+//                wait.until(ExpectedConditions.elementToBeClickable(By.xpath(locator)));
+                driver.findElement(By.xpath(locator)).sendKeys(value);
+                flag = true;
+            }
+            catch (Exception e) { }
+            return flag;
+        }
+    },
     WAIT_FOR_ELEMENT_CLICKABLE {
         @Override
         public boolean executeCommand(WebDriver driver, String locator, String value, int timeOut) {

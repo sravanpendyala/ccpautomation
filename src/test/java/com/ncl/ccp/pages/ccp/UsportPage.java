@@ -1,6 +1,7 @@
 package com.ncl.ccp.pages.ccp;
 
 import com.ncl.ccp.common.NCLEnvData;
+import com.ncl.ccp.common.NCLHooks;
 import com.ncl.ccp.common.NCLWebActions;
 import com.ncl.ccp.data.OrderedHashtable;
 import org.slf4j.Logger;
@@ -51,9 +52,10 @@ public class UsportPage extends NCLEnvData {
                 case "Offloaddata" -> {
                     flag = nclWebActions.setValueAndPressEnterKey(value, getObjMap("UsportPage.offloaddatav"), key);
                 }
+
                 case "Offloadupdate" -> {
                     flag = nclWebActions.clickValue(value, getObjMap("UsportPage.Offloadupdates"), key);
-                    nclWebActions.waitForElementClose("UsportPage.Offloadupdates");
+                    //  nclWebActions.waitForElementClose("UsportPage.Offloadupdates");
                 }
                 case "Qty" -> {
                     String a = "Yes (2)";
@@ -68,20 +70,23 @@ public class UsportPage extends NCLEnvData {
                 case "Offloadeventdropdowns" -> {
                     flag = nclWebActions.clickValue(value, getObjMap("UsportPage.Offloadeventdropdown"), key);
                 }
-                case "Offloadeventdropdownval" -> {
+                case "Offloadeventdropdownsingle" -> {
                     String[] a = value.split("\\|");
                     try {
-                        flag = nclWebActions.clickValue(a[1], getObjMap("UsportPage.Offloadeventdropdownval",a[0]), key);
+                        flag = nclWebActions.clickValue(a[1], getObjMap("UsportPage.Offloadeventdropdownsingle",a[0]), key);
                     }
                     catch (Exception e) {
                     }
-                    nclWebActions.waitForElement("UsportPage.Offloadpuropsedropdown");
                 }
+                case "Offloadeventdropdownvaluee2e" -> {
+                    value = NCLHooks.getRuntimeData(value);
+                    flag = nclWebActions.setValueAndPressEnterKey(value, getObjMap("UsportPage.Offloadeventdropdowne2e"), key);
 
-                case "Offloadpuropsedropdownclick" -> {
-                    flag = nclWebActions.clickValue(value, getObjMap("UsportPage.Offloadpuropsedropdown"), key);
                 }
-                case "OffloadpuropseValue" -> {
+                case "offloadpuropsedropdownclick" -> {
+                    flag = nclWebActions.clickValue(value, getObjMap("UsportPage.offloadpuropsedropdown"), key);
+                }
+                case "offloadpuropsedropdown" -> {
                     String[] b = value.split("\\|");
                     try {
                         flag = nclWebActions.clickValue(b[1], getObjMap("UsportPage.Offloadpuropse",b[0]), key);
@@ -89,15 +94,24 @@ public class UsportPage extends NCLEnvData {
                     catch (Exception e) {
                     }
                 }
-
-                case "saveOffloadFormClick" -> {
+                case "offloadpurposedropdown" -> {
+                    flag = nclWebActions.clickValue(value, getObjMap("UsportPage.offloadpurposedropdown"), key);
+                }
+                case "offloadpurposevalue" -> {
+                    flag = nclWebActions.setValueAndPressEnterKey(value, getObjMap("UsportPage.offloadpurposevalue"), key);
+                    if (flag)
+                    flag = nclWebActions.clickValue(value, getObjMap("UsportPage.maximizeicon"), key);
+                }
+                case "saveOffloadForm" -> {
                     flag = nclWebActions.clickValue(value, getObjMap("UsportPage.saveOffloadForm"), key);
-                    nclWebActions.waitForElement("UsportPage.destinationAddress");
+                    //nclWebActions.scrollByElement("UsportPage.destinationAddress");
+                    nclWebActions.scrollDown();
                 }
 
-                case "destinationAddressclick" -> {
+                case "destinationAddress" -> {
+                    // nclWebActions.waitForElement("UsportPage.destinationAddress");
                     flag = nclWebActions.clickValue(value, getObjMap("UsportPage.destinationAddress"), key);
-                    nclWebActions.waitForElement("UsportPage.companyname");
+
                 }
 
                 case "companynameval"-> {
@@ -214,7 +228,7 @@ public class UsportPage extends NCLEnvData {
 
                 case "addNoteClick" -> {
                     flag = nclWebActions.clickValue(value, getObjMap("UsportPage.AddNoteCLick"), key);
-                    nclWebActions.waitForElement("UsportPage.AddNoteText");
+                   // nclWebActions.waitForElement("UsportPage.AddNoteText");
                 }
 
                 case "addNoteText" -> {
@@ -241,17 +255,17 @@ public class UsportPage extends NCLEnvData {
 
                 case "SelectFileClick" -> {
                     flag = nclWebActions.setValue(value, getObjMap("UsportPage.SelectFile"), key);
-                    //flag = nclWebActions.setValue(value, getObjMap("UsportPage.SelectFile"), key);
+
                 }
 
                 case "SubmitClick" -> {
                     flag = nclWebActions.clickValue(value, getObjMap("UsportPage.Submit"), key);
                 }
-                    default -> {
-                        throw new RuntimeException("Field " + key + " is not defined in page " + sheetName + " class");
-                    }
+                default -> {
+                    throw new RuntimeException("Field " + key + " is not defined in page " + sheetName + " class");
                 }
-                if (!flag) throw new RuntimeException("Failed at " + key + " in page " + sheetName + " class");
             }
+            if (!flag) throw new RuntimeException("Failed at " + key + " in page " + sheetName + " class");
         }
     }
+}

@@ -1,6 +1,7 @@
 package com.ncl.ccp.pages.ccp;
 
 import com.ncl.ccp.common.NCLEnvData;
+import com.ncl.ccp.common.NCLHooks;
 import com.ncl.ccp.common.NCLWebActions;
 import com.ncl.ccp.data.OrderedHashtable;
 import org.slf4j.Logger;
@@ -9,6 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.Enumeration;
+import java.util.GregorianCalendar;
+
+import static com.ncl.ccp.common.NCLWebActions.randBetween;
 
 @Component
 public class ItineraryForUsPortPage extends NCLEnvData {
@@ -30,21 +34,19 @@ public class ItineraryForUsPortPage extends NCLEnvData {
             String key = keys.nextElement();
             String value = data.get(key).toString();
             switch (key) {
-
                 case "settingsbutton" -> {
                     flag = nclWebActions.clickValue(value, getObjMap("ItineraryForUsPortPage.settingsbutton"), key);
                 }
                 case "cvcidpage" -> {
                     flag = nclWebActions.setValue(value, getObjMap("ItineraryForUsPortPage.cvcidpage"), key);
                 }
-                case "itineraries" -> {
-                    flag = nclWebActions.clickValue(value, getObjMap("ItineraryForUsPortPage.itineraries"), key);
+                case "itinerariespg" -> {
+                    flag = nclWebActions.clickValue(value, getObjMap("ItineraryForUsPortPage.itinerariespg"), key);
                 }
                 case "newvesselitinerary" -> {
                     //nclWebActions.webDriver.switchTo().frame(nclWebActions.webDriver.findElement(By.xpath("//html[@dir='ltr']")));
                     flag = nclWebActions.clickValue(value, getObjMap("ItineraryForUsPortPage.newvesselitinerary"), key);
                 }
-
                 case "vesseloffload" -> {
                     flag = nclWebActions.clickValue(value, getObjMap("ExportOfflaodFormPdf.vesseloffload"), key);
                 }
@@ -57,12 +59,24 @@ public class ItineraryForUsPortPage extends NCLEnvData {
                 case "vesseltxt" -> {
                     String[] b = value.split("\\|");
                     try {
-                        flag = nclWebActions.clickValue(b[1], getObjMap("ItineraryForUsPortPage.vesseltxt",b[0]), key);
-                    }
-                    catch (Exception e) {
+                        flag = nclWebActions.clickValue(b[1], getObjMap("ItineraryForUsPortPage.vesseltxt", b[0]), key);
+                    } catch (Exception e) {
                     }
                 }
+                case "itinerariesfromdate" -> {
+                    flag = nclWebActions.clickValue(value, getObjMap("ItineraryForUsPortPage.itinerariesfromdate"), key);
+                }
                 case "itineraryday" -> {
+                    GregorianCalendar gc = new GregorianCalendar();
+                    int year = randBetween(2023, 2025);
+                    gc.set(gc.YEAR, year);
+                    int dayOfYear = randBetween(1, gc.getActualMaximum(gc.DAY_OF_YEAR));
+                    gc.set(gc.DAY_OF_YEAR, dayOfYear);
+                    value = ((gc.get(gc.MONTH) + 1) + "/" + gc.get(gc.DAY_OF_MONTH)+ "/" + gc.get(gc.YEAR));
+
+                    NCLHooks.setRuntimeData("ItineraryDate", value);
+
+                  //  value = NCLHooks.getRuntimeData(value);
                     flag = nclWebActions.setValue(value, getObjMap("ItineraryForUsPortPage.itineraryday"), key);
                 }
                 case "port" -> {
@@ -71,9 +85,8 @@ public class ItineraryForUsPortPage extends NCLEnvData {
                 case "portvalue" -> {
                     String[] b = value.split("\\|");
                     try {
-                        flag = nclWebActions.clickValue(b[1], getObjMap("ItineraryForUsPortPage.portvalue",b[0]), key);
-                    }
-                    catch (Exception e) {
+                        flag = nclWebActions.clickValue(b[1], getObjMap("ItineraryForUsPortPage.portvalue", b[0]), key);
+                    } catch (Exception e) {
                     }
                 }
                 case "exportform1" -> {
@@ -94,14 +107,23 @@ public class ItineraryForUsPortPage extends NCLEnvData {
                 case "offloadingallowedvalue1" -> {
                     String[] b = value.split("\\|");
                     try {
-                        flag = nclWebActions.clickValue(b[1], getObjMap("ItineraryForUsPortPage.offloadingallowedvalue",b[0]), key);
-                    }
-                    catch (Exception e) {
+                        flag = nclWebActions.clickValue(b[1], getObjMap("ItineraryForUsPortPage.offloadingallowedvalue", b[0]), key);
+                    } catch (Exception e) {
                     }
                 }
                 case "savebutton" -> {
+
                     flag = nclWebActions.clickValue(value, getObjMap("ItineraryForUsPortPage.savebutton"), key);
                 }
+                case "updatebutton" -> {
+
+                    flag = nclWebActions.clickValue(value, getObjMap("ItineraryForUsPortPage.updatebutton"), key);
+                }
+                case "closewindow" -> {
+
+                    flag = nclWebActions.clickValue(value, getObjMap("ItineraryForUsPortPage.closewindow"), key);
+                }
+
                 case "anchoredchkbx" -> {
                     flag = nclWebActions.clickValue(value, getObjMap("ItineraryForUsPortPage.anchoredchkbx"), key);
                 }

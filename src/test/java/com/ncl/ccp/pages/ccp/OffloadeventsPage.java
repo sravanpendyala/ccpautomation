@@ -1,8 +1,12 @@
 package com.ncl.ccp.pages.ccp;
 
 import com.ncl.ccp.common.NCLEnvData;
+import com.ncl.ccp.common.NCLHooks;
 import com.ncl.ccp.common.NCLWebActions;
 import com.ncl.ccp.data.OrderedHashtable;
+import com.ncl.ccp.selenium.Commands;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,29 +44,81 @@ public class OffloadeventsPage extends NCLEnvData {
                     flag = nclWebActions.clickValue(value, getObjMap("OffloadeventsPage.vesselitinerarydrpdwn"), key);
                 }
                 case "vesselitinerarydrpdwntxtusport" -> {
-                    String[] b = value.split("\\|");
-                    try {
-                        flag = nclWebActions.clickValue(b[1], getObjMap("OffloadeventsPage.vesselitinerarydrpdwntxt",b[0]), key);
+                    String finalOutput = "NCL_Gem_";
+                    value = NCLHooks.getRuntimeData(value);
+                    flag = nclWebActions.setValueAndPressEnterKey(value, getObjMap("OffloadeventsPage.vesselitinerarydrpdwntxt"), key);
+                    if (flag) {
+//                       String initialString = "Ship:Gem on:Dec 28, 2022 at: (PHI-Philipsburg) {CW-Curaçao}";
+                        String dateOutcome = value.split(":")[2].replace(",", "").replace(" at", "");
+                        String[] s1 = value.split("\\(");
+                        finalOutput = finalOutput + s1[1].split("-")[0] + "_" + dateOutcome;
+                        System.out.println(finalOutput);
+                        NCLHooks.setRuntimeData("OffloadEventCodeVal", finalOutput);
+                        try {
+                            Thread.sleep(2000);
+                        } catch (InterruptedException e) {
+                            throw new RuntimeException(e);
+                        }
                     }
-                    catch (Exception e) {
+                }
+                case "vesselitinerarydrpdwntxtusportori" -> {
+                    value = NCLHooks.getRuntimeData(value);
+                    try {
+                        Thread.sleep(5000);
+                        flag = nclWebActions.setValue(value, getObjMap("OffloadeventsPage.vesselitinerarydrpdwntxt"), key);
+                        Thread.sleep(5000);
+                        if (flag)
+                            flag = nclWebActions.clickValue(value, getObjMap("OffloadeventsPage.vesselitinerarydrpdwntxt1"), key);
+                        Thread.sleep(5000);
+                    } catch (InterruptedException e) {
+                        throw new RuntimeException(e);
                     }
                 }
                 case "vesselitinerarydrpdwntxtnonusport" -> {
-                    String[] b = value.split("\\|");
-                    try {
-                        flag = nclWebActions.clickValue(b[1], getObjMap("OffloadeventsPage.vesselitinerarydrpdwntxt",b[0]), key);
-                    }
-                    catch (Exception e) {
-                    }
-                    if (flag)
-                        flag = nclWebActions.setValue(value, getObjMap("OffloadeventsPage.portagentemailtxt"), key);
-                               nclWebActions.setValue(value, getObjMap("OffloadeventsPage.portagentcompanytxt"), key);
+
+//                    String finalOutput = "NCL_Gem_";
+//                    value = NCLHooks.getRuntimeData(value);
+//                    flag = nclWebActions.setValueAndPressEnterKey(value, getObjMap("OffloadeventsPage.vesselitinerarydrpdwntxt"), key);
+//                    if (flag) {
+////                       String initialString = "Ship:Gem on:Dec 28, 2022 at: (PHI-Philipsburg) {CW-Curaçao}";
+//                        String dateOutcome = value.split(":")[2].replace(",", "").replace(" at", "");
+//                        String[] s1 = value.split("\\(");
+//                        finalOutput = finalOutput + s1[1].split("-")[0] + "_" + dateOutcome;
+//                        System.out.println(finalOutput);
+//                        NCLHooks.setRuntimeData("OffloadEventCodeVal", finalOutput);
+//                        try {
+//                            Thread.sleep(2000);
+//                        } catch (InterruptedException e) {
+//                            throw new RuntimeException(e);
+//                        }}
+}                case "portagentemailtxt" -> {
+                    flag = nclWebActions.setValue(value, getObjMap("OffloadeventsPage.portagentemailtxt"), key);
+                }
+                case "portagentcompanytxt" -> {
+                    flag = nclWebActions.setValue(value, getObjMap("OffloadeventsPage.portagentcompanytxt"), key);
                 }
                 case "existingoffloadevent" -> {
                     flag = nclWebActions.setValueAndPressEnterKey(value, getObjMap("OffloadeventsPage.existingoffloadevent"), key);
                 }
+                case "applychanges" -> {
+                    flag = nclWebActions.clickValue(value, getObjMap("OffloadeventsPage.applychanges"), key);
+                    if (flag) {
+                        try {
+                            Thread.sleep(8000);
+                            String strActualVal = nclWebActions.getText(getObjMap("OffloadeventsPage.newitineraryname"));
+                            int actval = strActualVal.length() - 1;
+                            String strVal = strActualVal.substring(23, actval);
+                            NCLHooks.setRuntimeData("NewItinryName", strVal);
+                        } catch (InterruptedException e) {
+                            throw new RuntimeException(e);
+                        }
+                    }
+                }
                 case "editbutton" -> {
                     flag = nclWebActions.clickValue(value, getObjMap("OffloadeventsPage.editbutton"), key);
+                }
+                case "newitineraryname" -> {
+                    flag = nclWebActions.clickValue(value, getObjMap("OffloadeventsPage.newitineraryname"), key);
                 }
                 case "deletebutton" -> {
                     flag = nclWebActions.clickValue(value, getObjMap("OffloadeventsPage.deletebutton"), key);
@@ -75,6 +131,13 @@ public class OffloadeventsPage extends NCLEnvData {
                 }
                 case "savebutton" -> {
                     flag = nclWebActions.clickValue(value, getObjMap("OffloadeventsPage.savebutton"), key);
+                    if (flag) {
+                        try {
+                            Thread.sleep(10000);
+                        } catch (InterruptedException e) {
+                            throw new RuntimeException(e);
+                        }
+                    }
                 }
                 case "displayinactiverecords" -> {
                     flag = nclWebActions.clickValue(value, getObjMap("OffloadeventsPage.displayinactiverecords"), key);
