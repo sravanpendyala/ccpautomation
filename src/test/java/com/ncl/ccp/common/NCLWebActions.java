@@ -102,6 +102,11 @@ public class NCLWebActions {
                 flag = executeCommands.elementActions(webDriver, Commands.JS_SET_VALUE, locator, value[1], 10);
                 if (!flag) errMessage = "Element " + elementName + " failed to set value";
             }
+            case "TYPE_ENTER" -> {
+                executeCommands.elementActions(webDriver, Commands.JS_SET_VALUE, locator, value[1], 10);
+                flag = executeCommands.elementActions(webDriver, Commands.CLEAR, locator, action, 10);
+                if (!flag) errMessage = "Element " + elementName + " failed to set value";
+            }
             default -> {
                 NCLHooks.setRuntimeData(NCLHooks.CURR_PAGE + "." + elementName, action);
                 executeCommands.elementActions(webDriver, Commands.CLEAR, locator, action, 10);
@@ -156,12 +161,10 @@ public class NCLWebActions {
                 executeCommands.elementActions(webDriver, Commands.CLEAR, locator, action, 10);
                 flag = executeCommands.elementActions(webDriver, Commands.SET_VALUE, locator, action, 10);
                 try {
-                    Thread.sleep(5000);
+                    Thread.sleep(2000);
                 } catch (Exception e) {
                 }
                 webDriver.findElement(By.xpath(locator)).sendKeys(Keys.ENTER);
-                //webDriver.findElement(By.xpath(locator)).sendKeys(Keys.TAB);
-                //ExpectedConditions.visibilityOfAllElements(webDriver.findElements(By.xpath(locator)));
                 if (!flag) errMessage = "Element " + elementName + " failed to set value";
             }
         }
@@ -587,8 +590,8 @@ public class NCLWebActions {
         int count = 0;
         List<WebElement> rows = webDriver.findElements(By.xpath(locator));
         JavascriptExecutor js = (JavascriptExecutor) webDriver;
-    js.executeScript("arguments[0].scrollIntoView();",locator);
-}
+        js.executeScript("arguments[0].scrollIntoView();",locator);
+    }
     public static int randBetween(int start, int end) {
         return start + (int)Math.round(Math.random() * (end - start));
     }

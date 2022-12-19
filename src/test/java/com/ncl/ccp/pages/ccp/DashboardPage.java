@@ -31,6 +31,9 @@ public class DashboardPage extends NCLEnvData {
                 case "settingsbutton" -> {
                     flag = nclWebActions.clickValue(value, getObjMap("DashboardPage.settingsbutton"), key);
                 }
+                case "portlink" -> {
+                    flag = nclWebActions.clickValue(value, getObjMap("DashboardPage.portlink"), key);
+                }
                 case "userprofile" -> {
                     flag = nclWebActions.clickValue(value, getObjMap("DashboardPage.userprofile"), key);
                 }
@@ -45,6 +48,12 @@ public class DashboardPage extends NCLEnvData {
                 }
                 case "offloadeventsLnk" -> {
                     flag = nclWebActions.clickValue(value, getObjMap("DashboardPage.offloadeventsLnk"), key);
+                }
+                case "administrationlnk" -> {
+                    flag = nclWebActions.clickValue(value, getObjMap("DashboardPage.administrationlnk"), key);
+                }
+                case "usermanagementlnk" -> {
+                    flag = nclWebActions.clickValue(value, getObjMap("DashboardPage.usermanagementlnk"), key);
                 }
                 case "newvesselitinerary" -> {
                     //nclWebActions.webDriver.switchTo().frame(nclWebActions.webDriver.findElement(By.xpath("//html[@dir='ltr']")));

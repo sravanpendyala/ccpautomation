@@ -11,12 +11,8 @@ public class Usport {
  @Autowired
  UsportPage usportPage;
 
- // @When("click to {string} offload option")
- // public void clickToOffloadOption (String data) { usportPage.performActions(data); }
  @And("click on {string} response option")
- public void clickOnResponseOption(String data) {
-  usportPage.performActions(data);
- }
+ public void clickOnResponseOption(String data) { usportPage.performActions(data); }
  @When("navigate to {string} option from vessels offload option")
  public void navigateToOptionFromVesselsOffloadOption(String data) {
   usportPage.performActions(data);

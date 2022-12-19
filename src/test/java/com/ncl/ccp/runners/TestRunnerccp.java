@@ -13,7 +13,7 @@ import org.junit.runner.RunWith;
         glue = "com.ncl.ccp",
         tags = "")
 
-
+//Admin.feature
 public class TestRunnerccp {
 
 }

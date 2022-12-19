@@ -29,9 +29,9 @@ public class Offloadevents {
     public void pageShouldBeDisplayed(String data) { offloadeventsPage.performActions(data);}
     @When("search and edit the {string} searchbox")
     public void searchAndEditTheSearchbox(String data) { offloadeventsPage.performActions(data);}
-
     @And("enter data into {string} new offload events page")
     public void enterDataIntoNewOffloadEventsPage(String data) { offloadeventsPage.performActions(data);}
+
 }
     
 
