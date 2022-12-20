@@ -102,6 +102,12 @@ public class EditOffloadForm {
     @And("click on {string} drpdwn in offload form")
     public void clickOnDrpdwnInOffloadForm(String data) {editOffloadFormPage.performActions(data);
     }
+    @And("select {string} option")
+    public void selectOption(String data) {editOffloadFormPage.performActions(data);
+    }
+    @And("click {string} option")
+    public void clickOption(String data) {editOffloadFormPage.performActions(data);
+    }
 }
 
 

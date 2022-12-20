@@ -51,58 +51,53 @@ public class Usport {
  @Then("in new offload form page Select {string}")
  public void inNewOffloadFormPageSelect(String data) { usportPage.performActions(data); }
 
- @When("click on {string} dropdownarrow")
- public void clickOnDropdownarrow(String data) { usportPage.performActions(data); }
+ @When("click on {string} dropdown")
+ public void clickOnDropdown(String data) { usportPage.performActions(data); }
 
  @When("select {string} from the offload purpose dropdown")
  public void selectFromTheOffloadPurposeDropdown(String data) { usportPage.performActions(data); }
 
- @And("click on {string} button in new offload from page")
- public void clickOnButtonInNewOffloadFromPage(String data) { usportPage.performActions(data); }
+ @And("click on {string} button in new offloadform page")
+ public void clickOnButtonInNewOffloadformPage(String data) { usportPage.performActions(data); }
+ @And("enter values in {string} CompanyName,Address,Zipcode,city,country,state and clickon save button")
+ public void enterValuesInCompanyNameAddressZipcodeCityCountryStateAndClickonSaveButton(String data) { usportPage.performActions(data); }
 
- @And("enter values in {string} CompanyName,Address,Zipcode,city,country,state and click on save button")
- public void enterValuesInCompanyNameAddressZipcodeCityCountryStateAndClickOnSaveButton(String data) { usportPage.performActions(data); }
+ @Then("destination address should get displayed {string}")
+ public void destinationAddressShouldGetDisplayed(String data) { usportPage.performActions(data); }
 
- @Then("destination address should be displayed {string}")
- public void destinationAddressShouldBeDisplayed(String data) { usportPage.performActions(data); }
+ @When("click on {string} tab and then click on AddItem button")
+ public void clickOnTabAndThenClickOnAddItemButton(String data) { usportPage.performActions(data); }
 
- @When("click on {string} tab and then click on AddItem")
- public void clickOnTabAndThenClickOnAddItem(String data) { usportPage.performActions(data); }
-
- @And("enter Item details in {string} description,Use of Item and composite of material")
+ @And("enter Item details in {string} description,Use ofItem and composite of material")
  public void enterItemDetailsInDescriptionUseOfItemAndCompositeOfMaterial(String data) { usportPage.performActions(data); }
 
- @And("enter Item measurement details in {string} package type,quantity,weight per each and weight per each UOM")
+
+ @And("enter Item measurement details in {string} package type,quantity,weight pereach and weight per each UOM")
  public void enterItemMeasurementDetailsInPackageTypeQuantityWeightPerEachAndWeightPerEachUOM(String data) { usportPage.performActions(data); }
 
- @And("enter Item manufacturer details in {string} country of origin")
- public void enterItemManufacturerDetailsInCountryOfOrigin(String data) { usportPage.performActions(data); }
+ @And("enter Item manufacturer details in {string} countryoforigin")
+ public void enterItemManufacturerDetailsInCountryoforigin(String data) { usportPage.performActions(data); }
 
  @And("enter Item valuation details in {string} valuation type,AcquisitionPurchaseOrderNumber,AcquisitionDate,AcquisitionUnitCost and click on save")
  public void enterItemValuationDetailsInValuationTypeAcquisitionPurchaseOrderNumberAcquisitionDateAcquisitionUnitCostAndClickOnSave(String data) { usportPage.performActions(data); }
 
- @When("click on {string} tab and click on Add Note")
- public void clickOnTabAndClickOnAddNote(String data) { usportPage.performActions(data); }
+ @When("click on {string} tab and click on Add Note button")
+ public void clickOnTabAndClickOnAddNoteButton(String data) { usportPage.performActions(data); }
 
- @Then("enter {string} in text box and click on OK")
+
+  @Then("enter {string} in text box and click on OK")
  public void enterInTextBoxAndClickOnOK(String data) { usportPage.performActions(data); }
 
- @And("added notes should get displayed {string}")
+ @And("added notes should getdisplayed {string}")
  public void addedNotesShouldGetDisplayed(String data) { usportPage.performActions(data); }
 
  @When("click on {string} tab and then click on Select File")
  public void clickOnTabAndThenClickOnSelectFile(String data) { usportPage.performActions(data); }
 
- @And("click on {string} button in edit offload form page")
- public void clickOnButtonInEditOffloadFormPage(String data) { usportPage.performActions(data); }
+ @Then("enter {string} and click on enter button")
+ public void enterAndClickOnEnterButton(String data) { usportPage.performActions(data); }
 
- @Then("enter {string} and click on enter")
- public void enterAndClickOnEnter(String data) { usportPage.performActions(data); }
-
- @And("click on {string} in edit off load form page")
- public void clickOnInEditOffLoadFormPage(String data) { usportPage.performActions(data); }
-
- @And("enter Item valuation details in {string} valuation type,AcquisitionUnitCost and click on save")
+@And("enter Item valuation details in {string} valuation type,AcquisitionUnitCost and click on save")
  public void enterItemValuationDetailsInValuationTypeAcquisitionUnitCostAndClickOnSave(String data) { usportPage.performActions(data); }
 
  @And("click on {string} button in offload")
@@ -113,4 +108,11 @@ public class Usport {
 
  @And("click on {string} button in offloadforms page")
  public void clickOnButtonInOffloadformsPage(String data) { usportPage.performActions(data); }
+
+
+ @And("click on {string} button in edit offloadform page")
+ public void clickOnButtonInEditOffloadformPage(String data) { usportPage.performActions(data); }
+
+
+
 }

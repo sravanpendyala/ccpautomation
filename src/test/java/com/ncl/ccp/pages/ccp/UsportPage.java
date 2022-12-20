@@ -34,6 +34,12 @@ public class UsportPage extends NCLEnvData {
                 case "Vesselsoffloads" -> {
                     flag = nclWebActions.clickValue(value, getObjMap("UsportPage.Vesselsoffloads"), key);
                 }
+                case "vesseloffload" -> {
+                    flag = nclWebActions.clickValue(value, getObjMap("ExportOfflaodFormPdf.Offloadform"), key);
+                }
+                case "vesseloffload8" -> {
+                    flag = nclWebActions.clickValue(value, getObjMap("EditOffloadForm.vesseloffload8"), key);
+                }
                 case "Offloadresponse" -> {
                     flag = nclWebActions.clickValue(value, getObjMap("UsportPage.Offloadresponse"), key);
                 }
@@ -64,13 +70,40 @@ public class UsportPage extends NCLEnvData {
                 case "Offloadforms" -> {
                     flag = nclWebActions.clickValue(value, getObjMap("UsportPage.Offloadform"), key);
                 }
+                case "offloadform" -> {
+                    try{
+                        flag = nclWebActions.clickValue(value, getObjMap("EmailOffloadForm.offloadform"), key);
+                    }
+                    catch (Exception e) {
+                    }
+
+
+                }
+                case "offloadform1" -> {
+                    flag = nclWebActions.clickValue(value, getObjMap("OffloadstatuscustomsrejectPage.offloadform1"), key);
+                }
+
+                case "Offloadform2" -> {
+                    flag = nclWebActions.clickValue(value, getObjMap("UsportPage.Offloadform2"), key);
+                }
+                case "Offloadforms3" -> {
+                    flag = nclWebActions.setValue(value, getObjMap("ExportOfflaodFormPdf.Offloadforms3"), key);
+                }
+                case "Offloadforms4" -> {
+                    flag = nclWebActions.clickValue(value, getObjMap("CustomsExportFormPdf.Offloadforms4"), key);
+                }
+                case "Offloadforms5" -> {
+                    flag = nclWebActions.clickValue(value, getObjMap("EditOffloadForm.Offloadforms5"), key);
+                }
+
+
                 case "CreateNewOffloadforms" -> {
                     flag = nclWebActions.clickValue(value, getObjMap("UsportPage.CreateNewOffloadform"), key);
                 }
                 case "Offloadeventdropdowns" -> {
                     flag = nclWebActions.clickValue(value, getObjMap("UsportPage.Offloadeventdropdown"), key);
                 }
-                case "Offloadeventdropdownsingle" -> {
+                case "Offloadeventdropdownval" -> {
                     String[] a = value.split("\\|");
                     try {
                         flag = nclWebActions.clickValue(a[1], getObjMap("UsportPage.Offloadeventdropdownsingle",a[0]), key);
@@ -100,7 +133,7 @@ public class UsportPage extends NCLEnvData {
                 case "offloadpurposevalue" -> {
                     flag = nclWebActions.setValueAndPressEnterKey(value, getObjMap("UsportPage.offloadpurposevalue"), key);
                     if (flag)
-                    flag = nclWebActions.clickValue(value, getObjMap("UsportPage.maximizeicon"), key);
+                        flag = nclWebActions.clickValue(value, getObjMap("UsportPage.maximizeicon"), key);
                 }
                 case "saveOffloadForm" -> {
                     flag = nclWebActions.clickValue(value, getObjMap("UsportPage.saveOffloadForm"), key);
@@ -228,7 +261,7 @@ public class UsportPage extends NCLEnvData {
 
                 case "addNoteClick" -> {
                     flag = nclWebActions.clickValue(value, getObjMap("UsportPage.AddNoteCLick"), key);
-                   // nclWebActions.waitForElement("UsportPage.AddNoteText");
+                    // nclWebActions.waitForElement("UsportPage.AddNoteText");
                 }
 
                 case "addNoteText" -> {
@@ -261,6 +294,14 @@ public class UsportPage extends NCLEnvData {
                 case "SubmitClick" -> {
                     flag = nclWebActions.clickValue(value, getObjMap("UsportPage.Submit"), key);
                 }
+                case "offloadevent" -> {
+                    flag = nclWebActions.clickValue(value, getObjMap("pdfExportOffloadPage.offloadevent"), key);
+                }
+                case "Clickonoffloadform" -> {
+                    flag = nclWebActions.clickValue(value, getObjMap("EditOffloadForm.Clickonoffloadform"), key);
+                }
+
+
                 default -> {
                     throw new RuntimeException("Field " + key + " is not defined in page " + sheetName + " class");
                 }

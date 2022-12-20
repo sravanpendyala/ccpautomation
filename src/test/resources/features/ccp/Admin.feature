@@ -66,53 +66,104 @@ Feature: verify admin roles functionality
 #    And click on "savebutton" in new user page
 #    Then "userspage" page should be displayed in usermanagement page
 #
+#
+#  @TC_035
+#  Scenario:  Export Offload Form PDF
+#    ####################"offload form created before - data should be given to searchbar1
+#    When click on "Vesselsoffloads" option
+#    When click on "Offloadforms3" option
+#    When enter value in "searchbar1" and search
+#    When click on the "edit4" for the offload event created previously
+#    And click on "exportform1" button
+#    And click "offloadformpdf" option for exportform button
+
+
+
 #  @TC_036
-#  Scenario:  Export customs Form PDF
-#    When click on "vesseloffload" option
-#    Then click on "offloadform" option
-#    #Then offload event page should be displayed "oedrpage"
-#    And enter value in "searchbar1" and search
-#    And click on the "edit1" for the offload event created previously
-#    And click on "exportform1" drpdwn in offload form
+#  Scenario:  Export customs form PDF
+#    ###########"offload form created before - data should be given to searchbar1
+#    And click on "Vesselsoffloads" option
+#    When click on "Offloadforms3" option
+#    When enter value in "searchbar1" and search
+#    When click on the "edit4" for the offload event created previously
+#    And click on "exportform1" button
 #    And click "customsformpdf" option for exportform button
-#    #And "save" pdf file
+
 
 #  @TC_037
-#  Scenario:  Export customs Form PDF
-#    When click on "vesseloffload" option
-#    Then click on "offloadform" option
-#    #Then offload event page should be displayed "oedrpage"
-#    And enter value in "searchbar1" and search
-#    And click on the "edit1" for the offload event created previously
+#  Scenario:  Export offloadformxls
+#    ############"offload form created before - data should be given to searchbar1
+#    When click on "Vesselsoffloads" option
+#    When click on "Offloadforms3" option
+#    When enter value in "searchbar1" and search
+#    When click on the "edit4" for the offload event created previously
 #    And click on "exportform1" button
 #    And click "offloadformxls" option for exportform button
-#    #And "save" pdf file
 
 
-  #  @TC_038
-#  Scenario:  Export customs Form PDF
-#    When click on "vesseloffload" option
-#    Then click on "offloadform" option
-#    #Then offload event page should be displayed "oedrpage"
-#    And enter value in "searchbar1" and search
-#    And click on the "edit1" for the offload event created previously
+#  @TC_038
+#  Scenario:  Export customsformxls
+#    #################"offload form created before - data should be given to searchbar1
+#    When click on "Vesselsoffloads" option
+#    When click on "Offloadforms3" option
+#    When enter value in "searchbar1" and search
+#    When click on the "edit4" for the offload event created previously
 #    And click on "exportform1" button
 #    And click "customsformxls" option for exportform button
-#    #And "save" pdf file
 
-#  @TC_039
-#  Scenario:  Export Offload Form PDF
-#    #Given navigate to nclccp application
-#    #When enter Username, password and click on "adminlogin" button
-#    #Then homepage should be displayed "dashboardpg1"
-#    And click on "vesseloffload" option
-#    When click on "offloadform" option
-#    #Then offload event page should be displayed "oedrpage"
-#    When enter value in "searchbar1" and search
+
+ @TC_039
+  Scenario:  Export Offload Form PDF
+  ############"offload form created before - data should be given to searchbar1
+    ############ to address srpedyala@ncl.com
+    ######### message would be something like ex: TEST
+    And click on "Vesselsoffloads" option
+    When click on "Offloadforms3" option
+    When enter value in "searchbar1" and search
+    When click on the "edit4" for the offload event created previously
+    And click on "email" button
+    And click "offloadformpdf5" option for email
+    And Enter "to" option for email button
+    And Enter "Message" option for email button
+#
+#
+#  @TC_040
+#  Scenario:  Export offload forms in pdf
+#  ##############"Select any Offload Event Created Before with offload forms in proccessed statused"
+#  ############"(Purser_GSAM_Released/CustomsApproved/AdminAccepted/BrokerSubmittedToCustoms)" .
+#    When click on "Vesselsoffloads" option
+#    When click on "offloadevent" option
+#    When enter value in "searchbar3" and search
 #    When click on the "edit1" for the offload event created previously
-#    And click on "email" button
-#    And click "offloadformpdf" option for email
-#    And Enter "to" option for email button
-#    And Enter "Message" option for email button
-#    And "send" pdf file
-
+#    And click on "attachedoffloadforms" button
+#    And click "exportform1" option
+#    And click "offloadformpdf" option
+#
+#
+#  @TC_041
+#  Scenario:  Export offload forms in pdf
+#  ##############"Select any Offload Event Created Before with offload forms in proccessed statused"
+#  ############"(Purser_GSAM_Released/CustomsApproved/AdminAccepted/BrokerSubmittedToCustoms)" .
+#    When click on "Vesselsoffloads" option
+#    When click on "offloadevent" option
+#    When enter value in "searchbar3" and search
+#    When click on the "edit1" for the offload event created previously
+#    And click on "attachedoffloadforms" button
+#    And click "exportform1" option
+#    And select "offloadformxls" option
+#
+#
+#  @TC_044
+#  Scenario:  Export offload forms draft
+#  ############"Select any Offload Event Created Before with offload forms in proccessed statused"
+#  ############"(Purser_GSAM_Released/CustomsApproved/AdminAccepted/BrokerSubmittedToCustoms)" .
+#    ##Given navigate to nclccp_shoreside application
+#    ##When enter Username, password and click on "adminlogin" button
+#    ##Then homepage should be displayed "dashboardpg1"
+#    And click on "Vesselsoffloads" option
+#    When click on "offloadevent" option
+#    When enter value in "searchbar4" and search
+#    When click on the "edit1" for the offload event created previously
+#    #And click on "attachedoffloadforms" button
+#    #And click "exportform1" option
+#    And select "CE1302draft" option

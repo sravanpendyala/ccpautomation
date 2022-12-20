@@ -35,11 +35,71 @@ public class EditOffloadFormPage extends NCLEnvData {
                 case "Editbutton" -> {
                     flag = nclWebActions.clickValue(value, getObjMap("EditOffloadForm.Editbutton"), key);
                 }
+                case "offloadformpdf5" -> {
+                    flag = nclWebActions.clickValue(value, getObjMap("EmailOffloadForm.offloadformpdf"), key);
+                }
                 case "edit1" -> {
                     flag = nclWebActions.clickValue(value, getObjMap("EditOffloadForm.edit1"), key);
                 }
+                case "edit4" -> {
+                    flag = nclWebActions.clickValue(value, getObjMap("ExportOfflaodFormPdf.edit4"), key);
+                }
+
+                case "to" -> {
+                    flag = nclWebActions.setValue(value, getObjMap("EmailOffloadForm.to"), key);
+                    try {
+                        Thread.sleep(5000);
+                    } catch (Exception ex) {
+                    }
+
+                }
+
+
+                case "NotesFields1" -> {
+                    //String b = "test";
+                    try{
+                        flag = nclWebActions.switchFrames(getObjMap("EditOffloadForm.frame"));
+                        Thread.sleep(5000);
+                        flag = nclWebActions.setValue(value, getObjMap("EditOffloadForm.NotesFields1"), key);
+                        nclWebActions.webDriver.switchTo().defaultContent();
+                    } catch (Exception ex) {
+                    }
+
+
+                }
+
+                case "edit2" -> {
+                    flag = nclWebActions.clickValue(value, getObjMap("OffloadstatuscustomsapprovePage.edit2"), key);
+                }
                 case "Recallbutton" -> {
                     flag = nclWebActions.clickValue(value, getObjMap("EditOffloadForm.Recallbutton"), key);
+                }
+
+
+                case "exportform1" -> {
+                    flag = nclWebActions.clickValue(value, getObjMap("ExportOfflaodFormPdf.exportform1"), key);
+                }
+
+
+                case "Message" -> {
+                    //flag = nclWebActions.setValueAndPressEnterKey(value, getObjMap("EmailOffloadForm.Message"), key);
+                    try {
+                        Thread.sleep(5000);
+
+                        flag = nclWebActions.switchFrames(getObjMap("EmailOffloadForm.frame"));
+                        //nclWebActions.webDriver.switchTo().frame("//iframe[@class='cke_wysiwyg_frame cke_reset']");
+                        Thread.sleep(5000);
+                        flag = nclWebActions.setValue(value, getObjMap("EmailOffloadForm.Message"), key);
+                        Thread.sleep(5000);
+                        nclWebActions.webDriver.switchTo().defaultContent();
+                    } catch (Exception ex) {
+                    }
+
+                    /*if (flag)
+                        nclWebActions.webDriver.switchTo().frame(nclWebActions.webDriver.findElement(By.xpath("//html[@dir='ltr']")));
+                        flag = nclWebActions.setValue(value, getObjMap("EmailOffloadForm.Message"), key);
+                    nclWebActions.webDriver.switchTo().defaultContent();*/
+
                 }
                 case "RecallReason" -> {
                     //String a = "sravan.bar";
@@ -61,16 +121,57 @@ public class EditOffloadFormPage extends NCLEnvData {
                 case "Returnoffloadformbacktome" -> {
                     flag = nclWebActions.clickValue(value, getObjMap("EditOffloadForm.Returnoffloadformbacktome"), key);
                 }
-                case "offloadformpdf" -> {
-                    flag = nclWebActions.clickValue(value, getObjMap("ExportOfflaodFormPdf.offloadformpdf"), key);
+
+                case "update" -> {
+                    flag = nclWebActions.clickValue(value, getObjMap("OffloadEventDocumentPage.update"), key);
+                }
+
+                case "offloadform" -> {
+                    flag = nclWebActions.clickValue(value, getObjMap("StatusBrokerSubmittedToCustomsPage.offloadform"), key);
+                }
+                case "offloadform1" -> {
+                    flag = nclWebActions.clickValue(value, getObjMap("customsrejectPage.offloadform1"), key);
+                }
+
+                case "entrynumber" -> {
+                    nclWebActions.scrollDown1("StatusBrokerSubmittedToCustomsPage.entrynumber");
+
+                    flag = nclWebActions.clickValue(value, getObjMap("StatusBrokerSubmittedToCustomsPage.entrynumber"), key);
+                }
+
+                case "selectfile" -> {
+                    flag = nclWebActions.clickValue(value, getObjMap("OffloadEventDocumentPage.selectfile"), key);
+                }
+                case "selectfile2" -> {
+                    flag = nclWebActions.clickValue(value, getObjMap("FileEventDocumentPage.selectfile2"), key);
+                }
+                case "CE1302draft" -> {
+                    try {
+                        flag = nclWebActions.clickValue(value, getObjMap("ExportDraftPage.CE1302draft"), key);
+                        Thread.sleep(5000);
+                    }catch (Exception ex) {
+                    }
+
+                }
+
+                case "offloadformpdf1" -> {
+                    //        flag = nclWebActions.clickValue(value, getObjMap("ExportOfflaodFormPdf.offloadformpdf"), key);
                     try {
                         Thread.sleep(5000);
+                        flag = nclWebActions.clickValue(value, getObjMap("pdfExportOffloadPage.offloadformpdf1"), key);
+                    } catch (Exception ex) {
+                    }
+                }
+                case "offloadformpdf" -> {
+                    try {
+                        Thread.sleep(5000);
+                        flag = nclWebActions.selectOption(value, getObjMap("ExportOfflaodFormPdf.offloadformpdf"), key);
                     } catch (Exception ex) {
                     }
                 }
                 case "customsformpdf" -> {
-                    flag = nclWebActions.clickValue(value, getObjMap("CustomsExportFormPdf.customsformpdf2"), key);
-                    System.out.println("hai");
+                    flag = nclWebActions.clickValue(value, getObjMap("CustomsExportFormPdf.customsformpdf"), key);
+                   // System.out.println("hai");
                     try {
                         Thread.sleep(5000);
                     } catch (Exception ex) {
@@ -82,25 +183,26 @@ public class EditOffloadFormPage extends NCLEnvData {
 
                     try {
                         Thread.sleep(5000);
+                        flag = nclWebActions.clickValue(value, getObjMap("pdfExportOffloadPage.offloadformpdf1"), key);
                     } catch (Exception ex) {
                     }
                 }
-                    case "customsformxls" -> {
+                case "customsformxls" -> {
+                    try{
+                        Thread.sleep(50000);
                         //nclWebActions.webDriver.findElement(By.xpath("//li[@title='Export Offload Form in Excel format')]"));
                         flag = nclWebActions.clickValue(value, getObjMap("OffloadExportFormXl.customsformxls"), key);
-
-                        try {
-                            Thread.sleep(5000);
-                        } catch (Exception ex) {
-                        }
+                        Thread.sleep(5000);
+                    } catch (Exception ex) {
                     }
+                }
 
-                        default -> {
-                            throw new RuntimeException("Field " + key + " is not defined in page " + sheetName + " class");
-                        }
-                    }
-                if (!flag) throw new RuntimeException("Failed at " + key + " in page " + sheetName + " class");
-
+                default -> {
+                    throw new RuntimeException("Field " + key + " is not defined in page " + sheetName + " class");
                 }
             }
+            if (!flag) throw new RuntimeException("Failed at " + key + " in page " + sheetName + " class");
+
         }
+    }
+}

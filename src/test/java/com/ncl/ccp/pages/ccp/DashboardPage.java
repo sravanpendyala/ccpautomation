@@ -34,11 +34,54 @@ public class DashboardPage extends NCLEnvData {
                 case "portlink" -> {
                     flag = nclWebActions.clickValue(value, getObjMap("DashboardPage.portlink"), key);
                 }
+                case "exportform1" -> {
+                    try {
+                        Thread.sleep(3000);
+                        flag = nclWebActions.selectOption(value, getObjMap("ExportOfflaodFormPdf.exportform1"), key);
+
+                    } catch (Exception e) {
+                    }
+                }
+
+                    case "offloadformpdf" -> {
+                    flag = nclWebActions.clickValue(value, getObjMap("ExportOfflaodFormPdf.offloadformpdf"), key);
+                    try {
+                        Thread.sleep(5000);
+                    } catch (Exception ex) {
+                    }
+                }                case "attachedfiles" -> {
+                    try{
+                        Thread.sleep(10000);
+
+                        flag = nclWebActions.clickValue(value, getObjMap("OffloadEventDocumentPage.attachedfiles"), key);
+
+                    } catch (Exception ex) {
+                    }
+
+
+
+                }
+                case "attachedoffloadforms" -> {
+                    try {
+                        Thread.sleep(10000);
+                        flag = nclWebActions.clickValue(value, getObjMap("pdfExportOffloadPage.attachedoffloadforms"), key);
+
+                    } catch (Exception ex) {
+                    }
+
+                }
+
                 case "userprofile" -> {
                     flag = nclWebActions.clickValue(value, getObjMap("DashboardPage.userprofile"), key);
                 }
-                case "logoutbutton" -> {
-                    flag = nclWebActions.clickValue(value, getObjMap("DashboardPage.logoutbutton"), key);
+                case "offloadformxls" -> {
+                    //nclWebActions.webDriver.findElement(By.xpath("//li[@title='Export Offload Form in Excel format')]"));
+                    flag = nclWebActions.clickValue(value, getObjMap("OffloadExportFormXl.offloadformxls"), key);
+
+                    try {
+                        Thread.sleep(5000);
+                    } catch (Exception ex) {
+                    }
                 }
                 case "cvcidpage" -> {
                     flag = nclWebActions.setValue(value, getObjMap("DashboardPage.cvcidpage"), key);
@@ -63,6 +106,12 @@ public class DashboardPage extends NCLEnvData {
 
                     flag = nclWebActions.clickValue(value, getObjMap("DashboardPage.companyname"), key);
                 }
+
+
+                case "email" -> {
+
+                    flag = nclWebActions.clickValue(value, getObjMap("EmailOffloadForm.email"), key);
+                }
                 case "companynametxt" -> {
                     String[] a = value.split("\\|");
                     try {
@@ -70,7 +119,7 @@ public class DashboardPage extends NCLEnvData {
                     }
                     catch (Exception e) {
                     }
-                   // nclWebActions.waitForElement("DashboardPage.companynametxt");
+                    // nclWebActions.waitForElement("DashboardPage.companynametxt");
                 }
                 case "vesseltxt" -> {
                     String[] b = value.split("\\|");

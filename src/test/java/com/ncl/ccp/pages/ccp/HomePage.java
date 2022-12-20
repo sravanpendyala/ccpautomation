@@ -47,10 +47,7 @@ public class HomePage extends NCLEnvData {
                 case "LoginButton" -> {
                     flag = nclWebActions.clickValue(value, getObjMap("HomePage.Signin"), key);
                  }
-                case "UserLoginname" -> {
-                    String a = "sravan.bar";
-                    flag = nclWebActions.clickValue(value, getObjMap("HomePage.UserLoginname",a), key);
-                }
+
                 case "DashboardPg" -> {
                     flag = nclWebActions.clickValue(value, getObjMap("HomePage.DashboardPg"), key);
                 }

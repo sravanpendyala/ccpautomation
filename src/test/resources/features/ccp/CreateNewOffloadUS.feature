@@ -48,26 +48,28 @@ Feature: verify US port functionality
     And click on "Offloadforms" option in dashboard page
     And click on "CreateNewOffloadform" button in offloadforms page
     Then in new offload form page Select "Offloadeventdropdown"
-    Then enter "Offloadeventdropdownvaluee2e" and click on enter
-    When click on "offloadpurposedropdown" dropdownarrow
+    Then enter "Offloadeventdropdownvaluee2e" and click on enter button
+    When click on "offloadpurposedropdown" dropdown
     And select "offloadpurposevalue" from the offload purpose dropdown
-    And click on "saveOffloadForm" button in new offload from page
-    And click on "destinationAddress" button in new offload from page
-    And enter values in "destinationAddressFields" CompanyName,Address,Zipcode,city,country,state and click on save button
-    Then destination address should be displayed "validateAddress"
-    When click on "itemsTab" tab and then click on AddItem
-    And enter Item details in "NewItem_Item" description,Use of Item and composite of material
-    And enter Item measurement details in "NewItem_Measurements" package type,quantity,weight per each and weight per each UOM
-    And enter Item manufacturer details in "NewItem_Manufacturer" country of origin
+    And click on "saveOffloadForm" button in new offloadform page
+    And click on "destinationAddress" button in new offloadform page
+    And enter values in "destinationAddressFields" CompanyName,Address,Zipcode,city,country,state and clickon save button
+    Then destination address should get displayed "validateAddress"
+    When click on "itemsTab" tab and then click on AddItem button
+    And enter Item details in "NewItem_Item" description,Use ofItem and composite of material
+    And enter Item measurement details in "NewItem_Measurements" package type,quantity,weight pereach and weight per each UOM
+    And enter Item manufacturer details in "NewItem_Manufacturer" countryoforigin
     And enter Item valuation details in "NewItem_Valuation" valuation type,AcquisitionPurchaseOrderNumber,AcquisitionDate,AcquisitionUnitCost and click on save
-    When click on "notes" tab and click on Add Note
-    Then enter "noteText" in text box and click on OK
+    When click on "notes" tab and click on Add Note button
+    Then enter "noteText" in text box and click on OK button
     And added notes should get displayed "newNote"
     When click on "attachedFiles" tab and then click on Select File
-    And click on "saveOffloadForm" button in new offload from page
-    And click on "submit" in edit off load form page
+    And click on "saveOffloadForm" button in new offloadform page
+    And click on "submit" button in edit offloadform page
 
 
+###############################verify non US port functionality###########
+#
 #@TCS
 #Feature: verify non US port functionality
 #
@@ -110,8 +112,8 @@ Feature: verify US port functionality
 #    When click on "userprofile" in dashboard page
 #    And click on "logoutbutton" in dashboard page
 #
-##  @TC_010
-##  Scenario: Create new offload form for non US port
+#  @TC_010
+#  Scenario: Create new offload form for non US port
 #    Given navigate to nclccp application
 #    When enter username, password and click on "CreatorLogin" button
 #    Then homepage should be displayed "DashboardPg"
@@ -119,11 +121,11 @@ Feature: verify US port functionality
 #    And click on "Offloadforms" option in dashboard page
 #    And click on "CreateNewOffloadform" button in offloadforms page
 #    Then in new offload form page Select "Offloadeventdropdown"
-#    Then enter "Offloadeventdropdownvaluee2e" and click on enter
+#    Then enter "Offloadeventdropdownvaluee2e" and click on enter button
 #    When click on "offloadpurposedropdown" dropdownarrow
 #    And select "offloadpurposevalue" from the offload purpose dropdown
-#    And click on "saveOffloadForm" button in new offload from page
-#    And click on "destinationAddress" button in new offload from page
+#    And click on "saveOffloadForm" button in new offloadform page
+#    And click on "destinationAddress" button in new offloadform page
 #    And enter values in "destinationAddressFields" CompanyName,Address,Zipcode,city,country,state and click on save button
 #    Then destination address should be displayed "validateAddress"
 #    When click on "itemsTab" tab and then click on AddItem
@@ -131,72 +133,12 @@ Feature: verify US port functionality
 #    And enter Item measurement details in "NewItem_Measurements" package type,quantity,weight per each and weight per each UOM
 #    And enter Item manufacturer details in "NewItem_Manufacturer" country of origin
 #    And enter Item valuation details in "NewItem_Valuation" valuation type,AcquisitionPurchaseOrderNumber,AcquisitionDate,AcquisitionUnitCost and click on save
-#    When click on "notes" tab and click on Add Note
+#    When click on "notes" tab and click on Add Note button
 #    Then enter "noteText" in text box and click on OK
-#    And added notes should get displayed "newNote"
+#    And added notes should getdisplayed "newNote"
 #    When click on "attachedFiles" tab and then click on Select File
-#    And click on "saveOffloadForm" button in new offload from page
+#    And click on "saveOffloadForm" button in new offloadform page
 #    And click on "submit" in edit off load form page
 #
+##################################################
 #
-
-  #***************end***************
-
-
-
-#
-#    @TC_011
-#    Scenario: Create new offload form for US port and save as Draft
-#        Given navigate to nclccp application
-#        When enter Username, password and click on "Login" button
-#        Then homepage should be displayed "UserProfile"
-#        When click on "vessels" offload option
-#        And click on "Offloadforms" option
-#        And click on "CreateNewOffloadform" button
-#        Then in new offload form page Select "Offloadeventdropdown"
-#        Then enter "Offloadeventdropdownvalue" and click on enter
-#        When click on "Offloadpuropsedropdown" dropdownarrow
-#        And select "Offloadpuropse" from the offload purpose dropdown
-#        And click on "saveOffloadForm" button in new offload from page
-#        And click on "destinationAddress" button
-#        And enter values in "destinationAddressFields" CompanyName,Address,Zipcode,city,country,state and click on save button
-#        Then destination address should be displayed "validateAddress"
-#        When click on "itemsTab" tab and then click on AddItem
-#        And enter Item details in "NewItem_Item" description,Use of Item and composite of material
-#        And enter Item measurement details in "NewItem_Measurements" package type,quantity,weight per each and weight per each UOM
-#        And enter Item manufacturer details in "NewItem_Manufacturer" country of origin
-#        And enter Item valuation details in "NewItem_Valuation" valuation type,AcquisitionPurchaseOrderNumber,AcquisitionDate,AcquisitionUnitCost and click on save
-#        When click on "notes" tab and click on Add Note
-#        Then enter "noteText" in text box and click on OK
-#        And added notes should get displayed "newNote"
-#        When click on "attachedFiles" tab and then click on Select File
-#        And click on "saveOffloadForm" button in edit offload form page
-
-#
-#    @TC_012
-#    Scenario: Create new offload form for Non US port and save as Draft
-#        Given navigate to nclccp application
-#        When enter Username, password and click on "Login" button
-#        Then homepage should be displayed "UserProfile"
-#        When click on "vessels" offload option
-#        And click on "OffloadformsLnk" option
-#        And click on "CreateNewOffloadform" button
-#        Then in new offload form page Select "Offloadeventdropdown"
-#        Then enter "Offloadeventdropdownvalue" and click on enter
-#        When click on "Offloadpuropsedropdown" dropdownarrow
-#        And select "Offloadpuropse" from the offload purpose dropdown
-#        And click on "saveOffloadForm" button in new offload from page
-#        And click on "destinationAddress" button
-#        And enter values in "destinationAddressFields" CompanyName,Address,Zipcode,city,country,state and click on save button
-#        Then destination address should be displayed "validateAddress"
-#        When click on "itemsTab" tab and then click on AddItem
-#        And enter Item details in "NewItem_Item" description,Use of Item and composite of material
-#        And enter Item measurement details in "NewItem_Measurements" package type,quantity,weight per each and weight per each UOM
-#        And enter Item manufacturer details in "NewItem_Manufacturer" country of origin
-#        And enter Item valuation details in "Valuation" valuation type,AcquisitionUnitCost and click on save
-#        When click on "notes" tab and click on Add Note
-#        Then enter "noteText" in text box and click on OK
-#        And added notes should get displayed "newNote"
-#        When click on "attachedFiles" tab and then click on Select File
-#        And click on "saveOffloadForm" button in edit offload form page
-
