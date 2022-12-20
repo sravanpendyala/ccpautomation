@@ -47,7 +47,12 @@ public class SettingsPortPage extends NCLEnvData {
                    flag = nclWebActions.clickValue(value, getObjMap("SettingsPortPage.countrydrpdwn"), key);
                 }
                 case "countrydrpdwntxt" -> {
-                    flag = nclWebActions.clickValue(value, getObjMap("SettingsPortPage.countrydrpdwntxt"), key);
+                    String[] a = value.split("\\|");
+                    try {
+                        flag = nclWebActions.clickValue(a[1], getObjMap("SettingsPortPage.countrydrpdwntxt",a[0]), key);
+                    }
+                    catch (Exception e) {
+                    }
                 }
                 case "newportsavebtn" -> {
                    flag = nclWebActions.clickValue(value, getObjMap("SettingsPortPage.newportsavebtn"), key);

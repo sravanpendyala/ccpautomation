@@ -7,16 +7,16 @@ Feature: Validate creator role testcases
         Then homepage should be displayed "DashboardPg"
 
 
-#    @TC_008
-#    Scenario: Update department response
-      #  When click on "Vesselsoffloads" offload option
-       # And click on "Offloadforms" option
-#        Then offload event department response page should be displayed "oedrpage"
-#        When enter "datavalue" and click on search button
-#        And click on the "edit" option for the offload event created previously
-#        And update number of "offloads" forms field dropdown
-#        And click on "update" button in offload
-#        Then updated offload event department response page should be displayed "quantity"
+    @TC_008
+    Scenario: Update department response
+        When click on "Vesselsoffloads" offload option
+        And click on "offloadformsLnk" link option
+        Then "offloadformspg" should be displayed
+        When enter "datavalue" and click on search button
+        And click on the "edit" option for the offload event created previously
+        And update number of "offloads" forms field dropdown
+        And click on "update" button in offload
+        Then updated offload event department response page should be displayed "quantity"
 
 
 #    Feature: Verify Offload Form Status RecallInitiated
@@ -24,7 +24,7 @@ Feature: Validate creator role testcases
 #    @TC_013
 #    Scenario: offload form status RecallInitiated
 #        Given navigate to nclccp application
-#        When enter Username, password and click on "Login" button
+#        When enter username, password and click on "Login" button
 #        Then homepage should be displayed "UserProfile"
 #        When navigate to "offloadform" option from vessels offload option
 #        Then offload event department response page should be displayed "oedrpage"

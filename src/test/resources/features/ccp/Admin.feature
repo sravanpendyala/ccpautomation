@@ -16,6 +16,7 @@ Feature: verify admin roles functionality
 #    And enter data into "portnametxt" in newport page
 #    And enter data into "portnamewodiacriticstxt" in newport page
 #    And click on "countrydrpdwn" in newport page
+#    And click on "countrydrpdwntxt" in newport page
 #    And enter data into "portcodetxt" in newport page
 #    And click on "newportsavebtn" button in newport page
 #    Then "portpage" page should be displayed in portpage
@@ -44,7 +45,7 @@ Feature: verify admin roles functionality
 #    Then "userspage" page should be displayed in usermanagement page
 
 #  @TC_003
-#  Scenario:  Create new user in the system with Purser role
+#  Scenario:  Create new user in the system for Purser role
 #    When click on "administrationlnk" in dashboard page
 #    And click on "usermanagementlnk" in dashboard page
 #    Then "userspage" page should be displayed in usermanagement page
@@ -63,7 +64,7 @@ Feature: verify admin roles functionality
 #    And enter data into "confirmpasswordtxt" in new users page
 #    And enter data into "roletxt" in new users page
 #    And enter data into "rolepurser" in new users page
-#    And click on "savebutton" in new user page
+#   And click on "savebutton" in new user page
 #    Then "userspage" page should be displayed in usermanagement page
 #
 #
@@ -112,21 +113,21 @@ Feature: verify admin roles functionality
 #    And click "customsformxls" option for exportform button
 
 
- @TC_039
-  Scenario:  Export Offload Form PDF
-  ############"offload form created before - data should be given to searchbar1
-    ############ to address srpedyala@ncl.com
-    ######### message would be something like ex: TEST
-    And click on "Vesselsoffloads" option
-    When click on "Offloadforms3" option
-    When enter value in "searchbar1" and search
-    When click on the "edit4" for the offload event created previously
-    And click on "email" button
-    And click "offloadformpdf5" option for email
-    And Enter "to" option for email button
-    And Enter "Message" option for email button
-#
-#
+# @TC_039
+#  Scenario:  Export Offload Form PDF
+#  ############"offload form created before - data should be given to searchbar1
+#    ############ to address srpedyala@ncl.com
+#    ######### message would be something like ex: TEST
+#    And click on "Vesselsoffloads" option
+#    When click on "Offloadforms3" option
+#    When enter value in "searchbar1" and search
+#    When click on the "edit4" for the offload event created previously
+#    And click on "email" button
+#    And click "offloadformpdf5" option for email
+#    And Enter "to" option for email button
+#    And Enter "Message" option for email button
+##
+
 #  @TC_040
 #  Scenario:  Export offload forms in pdf
 #  ##############"Select any Offload Event Created Before with offload forms in proccessed statused"
@@ -138,8 +139,8 @@ Feature: verify admin roles functionality
 #    And click on "attachedoffloadforms" button
 #    And click "exportform1" option
 #    And click "offloadformpdf" option
-#
-#
+
+
 #  @TC_041
 #  Scenario:  Export offload forms in pdf
 #  ##############"Select any Offload Event Created Before with offload forms in proccessed statused"

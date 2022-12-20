@@ -43,24 +43,25 @@ public class DashboardPage extends NCLEnvData {
                     }
                 }
 
-                    case "offloadformpdf" -> {
+                case "offloadformpdf" -> {
                     flag = nclWebActions.clickValue(value, getObjMap("ExportOfflaodFormPdf.offloadformpdf"), key);
                     try {
                         Thread.sleep(5000);
                     } catch (Exception ex) {
                     }
                 }                case "attachedfiles" -> {
-                    try{
-                        Thread.sleep(10000);
+                    try {
+                        Thread.sleep(1000);
 
                         flag = nclWebActions.clickValue(value, getObjMap("OffloadEventDocumentPage.attachedfiles"), key);
 
                     } catch (Exception ex) {
                     }
-
-
-
                 }
+                case "logoutbutton" -> {
+                    flag = nclWebActions.clickValue(value, getObjMap("DashboardPage.logoutbutton"), key);
+                }
+
                 case "attachedoffloadforms" -> {
                     try {
                         Thread.sleep(10000);
@@ -74,6 +75,7 @@ public class DashboardPage extends NCLEnvData {
                 case "userprofile" -> {
                     flag = nclWebActions.clickValue(value, getObjMap("DashboardPage.userprofile"), key);
                 }
+
                 case "offloadformxls" -> {
                     //nclWebActions.webDriver.findElement(By.xpath("//li[@title='Export Offload Form in Excel format')]"));
                     flag = nclWebActions.clickValue(value, getObjMap("OffloadExportFormXl.offloadformxls"), key);

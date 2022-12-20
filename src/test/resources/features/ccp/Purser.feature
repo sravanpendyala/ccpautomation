@@ -1,11 +1,11 @@
-@TCS
-Feature: verify purser role functionality
-
-  Background: Login to application using purser role
-    Given navigate to nclccp application
-    When enter username, password and click on "PurserLogin" button
-    Then homepage should be displayed "DashboardPg"
-
+#@TCS
+#Feature: verify purser role functionality
+#
+#  Background: Login to application using purser role
+#    Given navigate to nclccp application
+#    When enter username, password and click on "PurserLogin" button
+#    Then homepage should be displayed "DashboardPg"
+#
 #  @TC_004
 #  Scenario: Itinerary for US port
 #    When click on "settingsbutton" in dashboard page
@@ -23,14 +23,17 @@ Feature: verify purser role functionality
 #    And enter "description" in the window
 #    When click on "offloadingallowed" change data
 #    And click on "offloadingallowedvalue" change data
-#    And click on "savebutton" in new vessel itinerary form
+#    When Click on "applychanges" button
+#    And click on "closewindow" in new vessel itinerary form
 #    Then "itinerariespg" itineraries page should be displayed
-#    When enter "existingitinerarytxt" in itineraries from date
 
 
-#
-#  @TC_005
-#  Scenario: Itinerary for non US port
+
+  @TC_005
+#  Scenario: Itinerary for US port
+#    Given navigate to nclccp application
+#    When enter username, password and click on "PurserLogin" button
+#    Then homepage should be displayed "DashboardPg"
 #    When click on "settingsbutton" in dashboard page
 #    Then click on the "itineraries" in the settings
 #    And click on "vesselitinerary" option link
@@ -46,19 +49,25 @@ Feature: verify purser role functionality
 #    And enter "description" in the window
 #    When click on "offloadingallowed" change data
 #    And click on "offloadingallowedvalue" change data
-#    And click on "savebutton" in new vessel itinerary form
-
-#  @TC_006
-#     # Prerequisite: step-6 vesselitinerarydrpdwntxtusport should be changed to for US Port
-#  Scenario: Create new Offload Event
+#    When Click on "applychanges" button
+#    And click on "closewindow" in new vessel itinerary form
+#    Then "itinerariespg" itineraries page should be displayed
+#  #@TC_006
+#  #Scenario: Create new Offload Event for US port
+#
 #    When click on "Vesselsoffloads" offload option
-#    And click on "offloadeventsLnk" option
+#    And click on "offloadeventsLnk" option link
 #    Then "offloadeventspg" page should be displayed
 #    When Click on "newoffloadeventsbtn" button
 #    And Select "vesselitinerarydrpdwn" from vessel itinenary
 #    And Select "vesselitinerarydrpdwntxtusport" from vessel itinenary
+#    And enter data into "portagentemailtxt" new offload events page
+#    And enter data into "portagentcompanytxt" new offload events page
 #    And Click on "savebutton" button
 #    Then "offloadeventspg" page should be displayed
+#    When click on "userprofile" in dashboard page
+#    And click on "logoutbutton" in dashboard page
+
 #
 #  @TC_007
 #  #vesselitinerarydrpdwntxtnonusport should be changed to for non US ports

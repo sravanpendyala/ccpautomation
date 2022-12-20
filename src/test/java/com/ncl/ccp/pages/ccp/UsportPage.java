@@ -67,7 +67,7 @@ public class UsportPage extends NCLEnvData {
                     String a = "Yes (2)";
                     flag = nclWebActions.clickValue(value, getObjMap("UsportPage.qty", a), key);
                 }
-                case "Offloadforms" -> {
+                case "offloadforms" -> {
                     flag = nclWebActions.clickValue(value, getObjMap("UsportPage.Offloadform"), key);
                 }
                 case "offloadform" -> {
