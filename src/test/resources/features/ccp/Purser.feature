@@ -1,10 +1,10 @@
-#@TCS
-#Feature: verify purser role functionality
-#
-#  Background: Login to application using purser role
-#    Given navigate to nclccp application
-#    When enter username, password and click on "PurserLogin" button
-#    Then homepage should be displayed "DashboardPg"
+@TCS
+Feature: verify purser role functionality
+
+  Background: Login to application using purser role
+    Given navigate to nclccp application
+    When enter username, password and click on "PurserLogin" button
+    Then homepage should be displayed "DashboardPg"
 #
 #  @TC_004
 #  Scenario: Itinerary for US port
@@ -29,7 +29,7 @@
 
 
 
-  @TC_005
+#  @TC_005
 #  Scenario: Itinerary for US port
 #    Given navigate to nclccp application
 #    When enter username, password and click on "PurserLogin" button
@@ -106,16 +106,16 @@
 #    And click on "Yesbutton" in confirm window
 #    Then "offloadeventspg" page should be displayed
 ##
-#  @TC_018
-##  ###Vessel Reference no- submitted status should be given in testdata sheet as it is unique#####
-#  Scenario: Offload Form with Status as PurserGSAMReleased
-#    When click on "Vesselsoffloads" offload option
-#    And click on "offloadformsLnk" link option
-#    Then "offloadformspg" should be displayed
-#    When search and edit the "existingreleasedoffloadform"
-#    Then "editoffloadform" should be displayed
-#    When click on "releasebutton" in offload forms tab
-#    Then "purserupdatedstatus" should be displayed
+  @TC_018
+#  ###Vessel Reference no- submitted status should be given in testdata sheet as it is unique#####
+  Scenario: Offload Form with Status as PurserGSAMReleased
+    When click on "Vesselsoffloads" offload option
+    And click on "offloadformsLnk" link option
+   Then "offloadformspg" should be displayed
+    When search and edit the "existingreleasedoffloadform"
+    Then "editoffloadform" should be displayed
+    When click on "releasebutton" in offload forms tab
+    Then "purserupdatedstatus" should be displayed
 #
 #    @TC_019
 #  Scenario: Offload Form with Status as PurserGSAMOnhold
@@ -128,14 +128,14 @@
 #    When click on "onholdbutton" in offload forms tab
 #    Then "purserupdatedstatus" should be displayed
 #
-#  @TC_020
-#  Scenario: Offload Form with Status as Purser GSAM Rejected
-#
-#    When click on "Vesselsoffloads" offload option
-#    And click on "offloadformsLnk" link option
-#    Then "offloadformspg" should be displayed
-#    When search and edit the "existingrejectedoffloadform"
-#    Then "editoffloadform" should be displayed
-#    When click on "rejectbutton" in offload forms tab
-#    And enter data in to rejectreason, notes and click on "savebtn"
-#    Then "purserupdatedstatus" should be displayed
+  @TC_020
+  Scenario: Offload Form with Status as Purser GSAM Rejected
+
+    When click on "Vesselsoffloads" offload option
+    And click on "offloadformsLnk" link option
+    Then "offloadformspg" should be displayed
+    When search and edit the "existingrejectedoffloadform"
+    Then "editoffloadform" should be displayed
+    When click on "rejectbutton" in offload forms tab
+    And enter data in to rejectreason, notes and click on "savebtn"
+    Then "purserupdatedstatus" should be displayed

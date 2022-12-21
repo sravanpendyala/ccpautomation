@@ -23,17 +23,11 @@ public class AmendEditOffloadForm {
         amendEditOffloadPage.performActions(data);
     }
     @When("Click on {string} in the offload")
-    public void clickOnInTheOffload(String data) {
-        amendEditOffloadPage.performActions(data);
-    }
+    public void clickOnInTheOffload(String data) { amendEditOffloadPage.performActions(data); }
     @Then("fill the {string} in the amend window")
-    public void fillTheInTheAmendWindow(String data) {
-        amendEditOffloadPage.performActions(data);
-    }
+    public void fillTheInTheAmendWindow(String data) { amendEditOffloadPage.performActions(data); }
     @And("fill the {string} in the amend")
-    public void fillTheInTheAmend(String data) {
-        amendEditOffloadPage.performActions(data);
-    }
+    public void fillTheInTheAmend(String data) { amendEditOffloadPage.performActions(data); }
     @And("click on {string} in amend window")
     public void clickOnInAmendWindow(String data) {
         amendEditOffloadPage.performActions(data);
@@ -43,13 +37,13 @@ public class AmendEditOffloadForm {
         amendEditOffloadPage.performActions(data);
     }
     @When("enter value in {string} and search")
-    public void enterValueInAndSearch(String data) {
-        amendEditOffloadPage.performActions(data);
-    }
+    public void enterValueInAndSearch(String data) { amendEditOffloadPage.performActions(data); }
     @And("Click on {string} in the offload event.")
     public void clickOnInTheOffloadEvent(String data) {
         amendEditOffloadPage.performActions(data);
     }
+    @When("click to {string} option from vessels offload option")
+    public void clickToOptionFromVesselsOffloadOption(String data) { amendEditOffloadPage.performActions(data); }
 }
 
 

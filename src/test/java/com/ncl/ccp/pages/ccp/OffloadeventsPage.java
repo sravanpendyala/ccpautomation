@@ -148,6 +148,9 @@ public class OffloadeventsPage extends NCLEnvData {
                 case "existingdeleteoffloadevent" -> {
                     flag = nclWebActions.setValueAndPressEnterKey(value, getObjMap("OffloadeventsPage.existingdeleteoffloadevent"), key);
                 }
+                case "searchvalue" -> {
+                    flag = nclWebActions.setValueAndPressEnterKey(value, getObjMap("OffloadformsPage.existingsubmittedoffloadform"), key);
+                }
                 default -> {
                     throw new RuntimeException("Field " + key + " is not defined in page " + sheetName + " class");
                 }

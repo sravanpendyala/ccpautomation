@@ -134,8 +134,7 @@ Feature: verify admin roles functionality
 #  ############"(Purser_GSAM_Released/CustomsApproved/AdminAccepted/BrokerSubmittedToCustoms)" .
 #    When click on "Vesselsoffloads" option
 #    When click on "offloadevent" option
-#    When enter value in "searchbar3" and search
-#    When click on the "edit1" for the offload event created previously
+#    When search and edit the "searchbar3"
 #    And click on "attachedoffloadforms" button
 #    And click "exportform1" option
 #    And click "offloadformpdf" option
@@ -147,24 +146,19 @@ Feature: verify admin roles functionality
 #  ############"(Purser_GSAM_Released/CustomsApproved/AdminAccepted/BrokerSubmittedToCustoms)" .
 #    When click on "Vesselsoffloads" option
 #    When click on "offloadevent" option
-#    When enter value in "searchbar3" and search
-#    When click on the "edit1" for the offload event created previously
+#    When search and edit the "searchbar3"
 #    And click on "attachedoffloadforms" button
 #    And click "exportform1" option
 #    And select "offloadformxls" option
-#
-#
-#  @TC_044
-#  Scenario:  Export offload forms draft
-#  ############"Select any Offload Event Created Before with offload forms in proccessed statused"
-#  ############"(Purser_GSAM_Released/CustomsApproved/AdminAccepted/BrokerSubmittedToCustoms)" .
-#    ##Given navigate to nclccp_shoreside application
-#    ##When enter Username, password and click on "adminlogin" button
-#    ##Then homepage should be displayed "dashboardpg1"
-#    And click on "Vesselsoffloads" option
-#    When click on "offloadevent" option
-#    When enter value in "searchbar4" and search
-#    When click on the "edit1" for the offload event created previously
-#    #And click on "attachedoffloadforms" button
-#    #And click "exportform1" option
-#    And select "CE1302draft" option
+
+
+  @TC_044
+  Scenario:  Export offload forms draft
+  ############"Select any Offload Event Created Before with offload forms in proccessed statused"
+  ############"(Purser_GSAM_Released/CustomsApproved/AdminAccepted/BrokerSubmittedToCustoms)" .
+    When click on "Vesselsoffloads" option
+    And click on "offloadevent" option
+    And search and edit the "searchbar4"
+    #And click on "attachedoffloadforms" button
+    #And click "exportform1" option
+    And select "CE1302draft" option

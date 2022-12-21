@@ -66,7 +66,6 @@ public class CCPUsportPage extends NCLEnvData {
                 case "ClickYesDelete" -> {
                     flag = nclWebActions.clickValue(value, getObjMap("CCPUsportPage.DeleteOffloadFormYes"), key);
                 }
-
                 case "OffloadpuropseValue" -> {
                     String[] b = value.split("\\|");
                     try {
@@ -329,9 +328,6 @@ public class CCPUsportPage extends NCLEnvData {
                 case "logoutbutton" -> {
                     flag = nclWebActions.clickValue(value, getObjMap("CCPUsportPage.logoutbutton"), key);
                 }
-
-
-
                 default -> {
                     throw new RuntimeException("Field " + key + " is not defined in page " + sheetName + " class");
                 }

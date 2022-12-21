@@ -19,7 +19,6 @@ public class EditOffloadFormPage extends NCLEnvData {
     NCLWebActions nclWebActions;
 
     public void performActions(String dataID) {
-        // public void performActions(String dataID) {
         boolean flag = false;
 
         OrderedHashtable data = readData(sheetName, dataID);
@@ -36,7 +35,11 @@ public class EditOffloadFormPage extends NCLEnvData {
                     flag = nclWebActions.clickValue(value, getObjMap("EditOffloadForm.Editbutton"), key);
                 }
                 case "offloadformpdf5" -> {
-                    flag = nclWebActions.clickValue(value, getObjMap("EmailOffloadForm.offloadformpdf"), key);
+                    try{
+                        flag = nclWebActions.clickValue(value, getObjMap("EmailOffloadForm.offloadformpdf"), key);
+                        Thread.sleep(6000);
+                    } catch (Exception ex) {
+                    }
                 }
                 case "edit1" -> {
                     flag = nclWebActions.clickValue(value, getObjMap("EditOffloadForm.edit1"), key);
@@ -64,10 +67,7 @@ public class EditOffloadFormPage extends NCLEnvData {
                         nclWebActions.webDriver.switchTo().defaultContent();
                     } catch (Exception ex) {
                     }
-
-
                 }
-
                 case "edit2" -> {
                     flag = nclWebActions.clickValue(value, getObjMap("OffloadstatuscustomsapprovePage.edit2"), key);
                 }
@@ -132,28 +132,46 @@ public class EditOffloadFormPage extends NCLEnvData {
                 case "offloadform1" -> {
                     flag = nclWebActions.clickValue(value, getObjMap("customsrejectPage.offloadform1"), key);
                 }
-
                 case "entrynumber" -> {
-                    nclWebActions.scrollDown1("StatusBrokerSubmittedToCustomsPage.entrynumber");
-
-                    flag = nclWebActions.clickValue(value, getObjMap("StatusBrokerSubmittedToCustomsPage.entrynumber"), key);
+                    // nclWebActions.scrollDown1("EditOffloadForm.entrynumber");
+                    flag = nclWebActions.setValue(value, getObjMap("EditOffloadForm.entrynumber"), key);
                 }
+                case "sendtocustoms" -> {
+                    flag = nclWebActions.clickValue(value, getObjMap("EditOffloadForm.maxbutton"), key);
 
+                    try {
+                        Thread.sleep(5000);
+                        flag = nclWebActions.clickValue(value, getObjMap("EditOffloadForm.sendtocustoms"), key);
+                    } catch (Exception ex) {
+                    }
+                }
                 case "selectfile" -> {
-                    flag = nclWebActions.clickValue(value, getObjMap("OffloadEventDocumentPage.selectfile"), key);
+
+                    //System.getProperty("user.dir")+"\files\File1.pdf";
+
+                    String[] a = value.split("\\|");
+                    try {
+                        flag = nclWebActions.clickValue(a[1], getObjMap("OffloadEventDocumentPage.selectfile",a[0]), key);
+                    }
+                    catch (Exception e) {
+                    }
                 }
                 case "selectfile2" -> {
-                    flag = nclWebActions.clickValue(value, getObjMap("FileEventDocumentPage.selectfile2"), key);
+                    String[] b = value.split("\\|");
+                    try {
+                        flag = nclWebActions.clickValue(b[1], getObjMap("FileEventDocumentPage.selectfile2",b[0]), key);
+                    }
+                    catch (Exception e) {
+                    }
                 }
                 case "CE1302draft" -> {
                     try {
+                        Thread.sleep(5000);
                         flag = nclWebActions.clickValue(value, getObjMap("ExportDraftPage.CE1302draft"), key);
                         Thread.sleep(5000);
                     }catch (Exception ex) {
                     }
-
                 }
-
                 case "offloadformpdf1" -> {
                     //        flag = nclWebActions.clickValue(value, getObjMap("ExportOfflaodFormPdf.offloadformpdf"), key);
                     try {
@@ -171,7 +189,7 @@ public class EditOffloadFormPage extends NCLEnvData {
                 }
                 case "customsformpdf" -> {
                     flag = nclWebActions.clickValue(value, getObjMap("CustomsExportFormPdf.customsformpdf"), key);
-                   // System.out.println("hai");
+                    // System.out.println("hai");
                     try {
                         Thread.sleep(5000);
                     } catch (Exception ex) {
@@ -196,7 +214,6 @@ public class EditOffloadFormPage extends NCLEnvData {
                     } catch (Exception ex) {
                     }
                 }
-
                 default -> {
                     throw new RuntimeException("Field " + key + " is not defined in page " + sheetName + " class");
                 }

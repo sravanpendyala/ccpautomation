@@ -49,12 +49,10 @@ public class DashboardPage extends NCLEnvData {
                         Thread.sleep(5000);
                     } catch (Exception ex) {
                     }
-                }                case "attachedfiles" -> {
+                }
+                case "attachedfiles" -> {
                     try {
-                        Thread.sleep(1000);
-
                         flag = nclWebActions.clickValue(value, getObjMap("OffloadEventDocumentPage.attachedfiles"), key);
-
                     } catch (Exception ex) {
                     }
                 }

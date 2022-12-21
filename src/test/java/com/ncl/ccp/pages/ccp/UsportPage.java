@@ -292,6 +292,7 @@ public class UsportPage extends NCLEnvData {
                 }
 
                 case "SubmitClick" -> {
+                    nclWebActions.waitForElement("UsportPage.Submit");
                     flag = nclWebActions.clickValue(value, getObjMap("UsportPage.Submit"), key);
                 }
                 case "offloadevent" -> {

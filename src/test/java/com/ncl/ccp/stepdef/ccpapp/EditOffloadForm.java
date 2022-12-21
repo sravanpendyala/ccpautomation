@@ -108,6 +108,18 @@ public class EditOffloadForm {
     @And("click {string} option")
     public void clickOption(String data) {editOffloadFormPage.performActions(data);
     }
+
+
+    @Then("Click to {string} option from vessels offload option")
+    public void clickToOptionFromVesselsOffloadOption(String data) {editOffloadFormPage.performActions(data);
+
+    }
+    @And("Click on {string} in the offload.")
+    public void clickOnInTheOffload(String data) {editOffloadFormPage.performActions(data);
+    }
+
+    @When("Enter on {string} in the offload")
+    public void enterOnInTheOffload(String data) {editOffloadFormPage.performActions(data); }
 }
 
 

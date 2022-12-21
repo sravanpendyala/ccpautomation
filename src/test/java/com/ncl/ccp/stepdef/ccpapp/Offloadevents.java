@@ -32,6 +32,11 @@ public class Offloadevents {
     @And("enter data into {string} new offload events page")
     public void enterDataIntoNewOffloadEventsPage(String data) { offloadeventsPage.performActions(data);}
 
+    @When("enter in {string} and check the status")
+    public void enterInAndCheckTheStatus(String data) { offloadeventsPage.performActions(data);}
+
+    @When("search and edit the {string} value")
+    public void searchAndEditTheValue(String data) { offloadeventsPage.performActions(data);}
 }
     
 
