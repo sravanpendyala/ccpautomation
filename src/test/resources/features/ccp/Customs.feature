@@ -12,11 +12,9 @@ Feature: verify custom broker functionality
 #    When click on "Vesselsoffloads" option
 #    When click to "Offloadform2" option from vessels offload option
 #    When search and edit the "Amendsearchvalue"
-#    #When enter value in "searchbar1" and search
-#    #And Click on "Edit5" in the offload event.
 #    When Click on "Amendbutton" in the offload
- #  Then fill the "Amendreason" in the amend window
-###    And fill the "NotesFields" in the amend
+#    Then fill the "Amendreason" in the amend window
+#       ### And fill the "NotesFields" in the amend
 #    And click on "CreateAmend" in amend window
 
 
@@ -58,21 +56,33 @@ Feature: verify custom broker functionality
 
 #  @TC_029
 #  Scenario:Offload Form Status CustomsApproved
+#    ######"offload form created before and it should be in broker submitted to customs status"
 #    When click on "Vesselsoffloads" option
 #    Then Click to "offloadform" option from vessels offload option
-# ######"offload form created before and it should be in broker submitted to customs status"
-#     When search and edit the "searchbar7"
+#    When search and edit the "searchbar7"
 #    When Click on "customsapprove" in the offload
 
 
 
 #  @TC_030
 #  Scenario:Offload Form Status CustomsRejected
+#    ###########"offload form created before and it should be in broker submitted to customs status"
 #    When click on "Vesselsoffloads" option
 #    Then Click to "offloadform" option from vessels offload option
-#  ###########"offload form created before and it should be in broker submitted to customs status"
 #    When search and edit the "searchbar8"
 #    When Click on "customsreject" in the offload
 #   Then fill the "rejectreason" in the amend window
 ###    And fill the "NotesFields" in the amend
 #    Then click on dropdown "DesiredNextStatus" in recall window
+
+  @TC_030
+  Scenario:Offload Form Status CustomsRejected
+    ###########"offload form created before and it should be in broker submitted to customs status"
+    When click on "Vesselsoffloads" option
+    Then Click to "offloadform" option from vessels offload option
+    When search and edit the "searchbar8"
+    When Click on "customsreject" in the offload
+    Then fill the "rejectreason" in the amend window
+    And fill the "NotesFields" in the amend
+    Then click on dropdown "DesiredNextStatus" in recall window
+    And click on "Finalrejection"

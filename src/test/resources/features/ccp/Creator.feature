@@ -7,16 +7,15 @@ Feature: Validate creator role testcases
         Then homepage should be displayed "DashboardPg"
 
 
-    @TC_008
-    Scenario: Update department response
-        When click on "Vesselsoffloads" offload option
-        And click on "offloadformsLnk" link option
-        Then "offloadformspg" should be displayed
-        When enter "datavalue" and click on search button
-        And click on the "edit" option for the offload event created previously
-        And update number of "offloads" forms field dropdown
-        And click on "update" button in offload
-        Then updated offload event department response page should be displayed "quantity"
+#    @TC_008
+#    Scenario: Update department response
+#        When click on "Vesselsoffloads" offload option
+#        And click on "Offloadresponse" offload option
+#        Then "offloadresponsepg" page should be displayed
+#        When search and edit the "updatedeptresponse"
+#        And update number of "offloadsvalue" forms field dropdown
+#        And click on "update" button in offload
+#        Then updated offload event department response page should be displayed "quantity"
 
 
 #    Feature: Verify Offload Form Status RecallInitiated

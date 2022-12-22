@@ -1,6 +1,7 @@
 package com.ncl.ccp.pages.ccp;
 
 import com.ncl.ccp.common.NCLEnvData;
+import com.ncl.ccp.common.NCLHooks;
 import com.ncl.ccp.common.NCLWebActions;
 import com.ncl.ccp.data.OrderedHashtable;
 import org.slf4j.Logger;
@@ -44,7 +45,9 @@ public class AdministrationPage extends NCLEnvData {
                 case "siterdbtn" -> {
                     flag = nclWebActions.clickValue(value, getObjMap("AdministrationPage.siterdbtn"), key); }
                 case "usernametxt" -> {
-                    flag = nclWebActions.setValue(value, getObjMap("AdministrationPage.usernametxt"), key); }
+                    value =  nclWebActions.randomValueGenerator();
+                    flag = nclWebActions.setValue(value, getObjMap("AdministrationPage.usernametxt"), key);
+                    NCLHooks.setRuntimeData("SearchUserCreated", value);}
                 case "displaynametxt" -> {
                     flag = nclWebActions.setValue(value, getObjMap("AdministrationPage.displaynametxt"), key); }
                 case "emailtxt" -> {

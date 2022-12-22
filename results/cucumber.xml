@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="87.909">
+    <testcase classname="verify non US port functionality" name="Itinerary for non US port" time="84.324">
+        <failure message="Failed at vesselitinerarydrpdwntxtnonusport in page OffloadeventsPage class" type="java.lang.RuntimeException"><![CDATA[Given navigate to nclccp application........................................passed
+When enter username, password and click on "PurserLogin" button.............passed
+Then homepage should be displayed "DashboardPg".............................passed
+When click on "settingsbutton" in dashboard page............................passed
+Then click on the "itineraries" in the settings.............................passed
+And click on "vesselitinerary" option link..................................passed
+When click on "newvesselitinerary" button...................................passed
+Then enter data into "companyname" dropdown.................................passed
+And enter data into "companynametxt" dropdown...............................passed
+And enter data into "vessel" dropdown.......................................passed
+And enter data into "vesseltxt" dropdown....................................passed
+Then enter data into "itineraryday".........................................passed
+When click on "port" select value...........................................passed
+And click on "portnonusvalue" select value..................................passed
+Then enter "sequence".......................................................passed
+And enter "description" in the window.......................................passed
+When click on "offloadingallowed" change data...............................passed
+And click on "offloadingallowedvalue" change data...........................passed
+When Click on "applychanges" button.........................................passed
+And click on "closewindow" in new vessel itinerary form.....................passed
+Then "itinerariespg" itineraries page should be displayed...................passed
+When click on "Vesselsoffloads" offload option..............................passed
+And click on "offloadeventsLnk" option link.................................passed
+Then "offloadeventspg" page should be displayed.............................passed
+When Click on "newoffloadeventsbtn" button..................................passed
+And Select "vesselitinerarydrpdwn" from vessel itinenary....................passed
+And Select "vesselitinerarydrpdwntxtnonusport" from vessel itinenary........failed
+And enter data into "portagentemailtxt" new offload events page.............skipped
+And enter data into "portagentcompanytxt" new offload events page...........skipped
+And Click on "savebutton" button............................................skipped
+Then "offloadeventspg" page should be displayed.............................skipped
+When click on "userprofile" in dashboard page...............................skipped
+And click on "logoutbutton" in dashboard page...............................skipped
+Given navigate to nclccp application........................................skipped
+When enter username, password and click on "CreatorLogin" button............skipped
+Then homepage should be displayed "DashboardPg".............................skipped
+When click on "Vesselsoffloads" offload option..............................skipped
+And click on "offloadformsLnk" option link..................................skipped
+And click on "CreateNewOffloadform" button in offloadforms page.............skipped
+Then in new offload form page Select "Offloadeventdropdown".................skipped
+Then enter "Offloadeventdropdownvaluee2e" and click on enter button.........skipped
+When click on "offloadpurposedropdown" dropdown.............................skipped
+And select "offloadpurposevalue" from the offload purpose dropdown..........skipped
+And click on "saveOffloadForm" button in new offloadform page...............skipped
+And click on "destinationAddress" button in new offloadform page............skipped
+And enter values in "destinationAddressFields" CompanyName,Address,Zipcode,city,country,state and clickon save button.skipped
+Then destination address should get displayed "validateAddress".............skipped
+When click on "itemsTab" tab and then click on AddItem button...............skipped
+And enter Item details in "NewItem_Item" description,Use ofItem and composite of material.skipped
+And enter Item measurement details in "NewItem_Measurements" package type,quantity,weight pereach and weight per each UOM.skipped
+And enter Item manufacturer details in "NewItem_Manufacturer" countryoforigin.skipped
+And enter Item valuation details in "NewItem_Valuation" valuation type,AcquisitionPurchaseOrderNumber,AcquisitionDate,AcquisitionUnitCost and click on save.skipped
+When click on "notes" tab and click on Add Note.............................skipped
+Then enter "noteText" in text box and click on OK...........................skipped
+And added notes should get displayed "newNote"..............................skipped
+When click on "attachedFiles" tab and then click on SelectFile..............skipped
+And click on "saveOffloadForm" button in edit offload form page.............skipped
+And click on "submit" button in edit offloadform page.......................skipped
+When enter in "searchdata" and check the status.............................skipped
+When click on "userprofile" in dashboard page...............................skipped
+And click on "logoutbutton" in dashboard page...............................skipped
+
+StackTrace:
+java.lang.RuntimeException: Failed at vesselitinerarydrpdwntxtnonusport in page OffloadeventsPage class
+	at com.ncl.ccp.pages.ccp.OffloadeventsPage.performActions(OffloadeventsPage.java:162)
+	at com.ncl.ccp.stepdef.ccpapp.Offloadevents.selectFromVesselItinenary(Offloadevents.java:23)
+	at ✽.Select "vesselitinerarydrpdwntxtnonusport" from vessel itinenary(classpath:features/ccp/CreateNewoffloadUS.feature:108)
+]]></failure>
+    </testcase>
+</testsuite>

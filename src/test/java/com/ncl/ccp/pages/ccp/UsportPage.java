@@ -58,14 +58,13 @@ public class UsportPage extends NCLEnvData {
                 case "Offloaddata" -> {
                     flag = nclWebActions.setValueAndPressEnterKey(value, getObjMap("UsportPage.offloaddatav"), key);
                 }
-
                 case "Offloadupdate" -> {
                     flag = nclWebActions.clickValue(value, getObjMap("UsportPage.Offloadupdates"), key);
                     //  nclWebActions.waitForElementClose("UsportPage.Offloadupdates");
                 }
-                case "Qty" -> {
+                case "quantity" -> {
                     String a = "Yes (2)";
-                    flag = nclWebActions.clickValue(value, getObjMap("UsportPage.qty", a), key);
+                    flag = nclWebActions.clickValue(value, getObjMap("UsportPage.quantity", a), key);
                 }
                 case "offloadforms" -> {
                     flag = nclWebActions.clickValue(value, getObjMap("UsportPage.Offloadform"), key);
@@ -137,8 +136,7 @@ public class UsportPage extends NCLEnvData {
                 }
                 case "saveOffloadForm" -> {
                     flag = nclWebActions.clickValue(value, getObjMap("UsportPage.saveOffloadForm"), key);
-                    //nclWebActions.scrollByElement("UsportPage.destinationAddress");
-                    nclWebActions.scrollDown();
+                         // nclWebActions.scrollDown();
                 }
 
                 case "destinationAddress" -> {
@@ -282,13 +280,20 @@ public class UsportPage extends NCLEnvData {
                     flag = nclWebActions.clickValue(value, getObjMap("UsportPage.newNote"), key);
                 }
 
+              //  case "AttachedFilesTabClick" -> {
+               //     flag = nclWebActions.clickValue(value, getObjMap("UsportPage.AttachedFilesTab"), key);
+
+            //   if (flag)
+             //      flag = nclWebActions.clickValue(value, getObjMap("UsportPage.OK"), key);
+
+           //     }
                 case "AttachedFilesTabClick" -> {
-                    flag = nclWebActions.clickValue(value, getObjMap("UsportPage.AttachedFilesTab"), key);
+                    flag = nclWebActions.clickValue(value, getObjMap("CCPUsportPage.AttachedFilesTab"), key);
                 }
 
                 case "SelectFileClick" -> {
-                    flag = nclWebActions.setValue(value, getObjMap("UsportPage.SelectFile"), key);
-
+                    flag = nclWebActions.setValue(value, getObjMap("CCPUsportPage.SelectFile"), key);
+                    //flag = nclWebActions.setValue(value, getObjMap("CCPUsportPage.SelectFile"), key);
                 }
 
                 case "SubmitClick" -> {

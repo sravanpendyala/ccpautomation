@@ -68,7 +68,7 @@ public class ItineraryForUsPortPage extends NCLEnvData {
                 }
                 case "itineraryday" -> {
                     GregorianCalendar gc = new GregorianCalendar();
-                    int year = randBetween(2023, 2025);
+                    int year = randBetween(2023, 2023);
                     gc.set(gc.YEAR, year);
                     int dayOfYear = randBetween(1, gc.getActualMaximum(gc.DAY_OF_YEAR));
                     gc.set(gc.DAY_OF_YEAR, dayOfYear);

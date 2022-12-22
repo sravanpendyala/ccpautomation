@@ -77,7 +77,7 @@ public class NCLWebActions {
                 flag = executeCommands.elementActions(webDriver, Commands.IS_ENABLED, locator, action, 10);
                 if (!flag) errMessage = "Element " + elementName + " NOT enabled";
             }
-            case "FILE_UPLOAD"-> {
+            case "FILE_UPLOAD" -> {
                 flag = executeCommands.elementActions(webDriver, Commands.FILE_UPLOAD, locator, value[1], 10);
                 if (!flag) errMessage = "Element " + elementName + " failed to set value";
             }
@@ -161,7 +161,7 @@ public class NCLWebActions {
                 executeCommands.elementActions(webDriver, Commands.CLEAR, locator, action, 10);
                 flag = executeCommands.elementActions(webDriver, Commands.SET_VALUE, locator, action, 10);
                 try {
-                    Thread.sleep(2000);
+                    Thread.sleep(3000);
                 } catch (Exception e) {
                 }
                 webDriver.findElement(By.xpath(locator)).sendKeys(Keys.ENTER);
@@ -450,7 +450,7 @@ public class NCLWebActions {
                     .pollingEvery(Duration.ofSeconds(1))
                     .ignoring(NoSuchElementException.class,
                             StaleElementReferenceException.class);
-            wait.until(ExpectedConditions.visibilityOfAllElements(webDriver.findElements(By.xpath(locator))));
+          //  wait.until(ExpectedConditions.visibilityOfElementLocated(webDriver.findElements(By.xpath(locator))));
             wait = new FluentWait<>(webDriver)
                     .withTimeout(Duration.ofSeconds(2))
                     .pollingEvery(Duration.ofSeconds(1))
@@ -572,12 +572,24 @@ public class NCLWebActions {
         return ((gc.get(gc.MONTH) + 1) + "/" + gc.get(gc.DAY_OF_MONTH) + "/" + gc.get(gc.YEAR));
     }
 
+    public static int randBetween(int start, int end) {
+        return start + (int) Math.round(Math.random() * (end - start));
+    }
+
+    public String randomValueGenerator() {
+        int randdata = randBetween(1, 2000);
+        String s = "Test" + randdata;
+        System.out.println("Randm generated value ----"+s);
+        return s;
+    }
+
     //to perform Scroll on application using Selenium
     public void scrollDown() {
         JavascriptExecutor js = (JavascriptExecutor) webDriver;
         js.executeScript("window.scrollBy(0,350)", "");
         js.executeScript("window.scrollTo(0, document.body.scrollHeight);");
     }
+
     public void scrollByElement(String locator) {
         //Locating element by link text and store in variable "Element"
         WebElement Element = webDriver.findElement(By.linkText("Try Selenium Testing For Free"));
@@ -586,15 +598,15 @@ public class NCLWebActions {
         js.executeScript("arguments[0].scrollIntoView();", locator);
 
     }
-    public void scrollDown1(String locator) {   boolean flag = false;
+
+    public void scrollDown1(String locator) {
+        boolean flag = false;
         int count = 0;
         List<WebElement> rows = webDriver.findElements(By.xpath(locator));
         JavascriptExecutor js = (JavascriptExecutor) webDriver;
-        js.executeScript("arguments[0].scrollIntoView();",locator);
+        js.executeScript("arguments[0].scrollIntoView();", locator);
     }
-    public static int randBetween(int start, int end) {
-        return start + (int)Math.round(Math.random() * (end - start));
-    }
+
 
     private ArrayList getHeaderNumbers(String locator, ArrayList headers, String key) {
         boolean flag = true;
@@ -645,9 +657,8 @@ public class NCLWebActions {
     }
 
 
-    public boolean updateStateroomSelection(String value)
-    {
-        boolean flag=false;
+    public boolean updateStateroomSelection(String value) {
+        boolean flag = false;
         flag = executeCommands.elementActions(webDriver, Commands.IS_DISPLAYED, "//div[text()='" + value + "']", "IS_DISPLAYED", 10);
         if (flag) {
             int size = webDriver.findElements(By.xpath("//div[text()='" + value + "']/ancestor::fieldset/descendant::ul/li")).size();

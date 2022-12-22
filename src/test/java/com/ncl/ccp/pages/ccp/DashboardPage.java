@@ -92,6 +92,9 @@ public class DashboardPage extends NCLEnvData {
                 case "offloadeventsLnk" -> {
                     flag = nclWebActions.clickValue(value, getObjMap("DashboardPage.offloadeventsLnk"), key);
                 }
+                case "offloadresponseLnk" -> {
+                    flag = nclWebActions.clickValue(value, getObjMap("DashboardPage.offloadeventsLnk"), key);
+                }
                 case "administrationlnk" -> {
                     flag = nclWebActions.clickValue(value, getObjMap("DashboardPage.administrationlnk"), key);
                 }

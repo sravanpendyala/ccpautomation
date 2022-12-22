@@ -20,6 +20,8 @@ public class SettingsPort {
     public void clickOnInPortpage(String data) { settingsPortPage.performActions(data); }
     @And("click on {string} in newport page")
     public void clickOnInNewportPage(String data) { settingsPortPage.performActions(data); }
+    @When("search and edit the {string} in portpage")
+    public void searchAndEditTheInPortpage(String data) { settingsPortPage.performActions(data); }
 }
 
 

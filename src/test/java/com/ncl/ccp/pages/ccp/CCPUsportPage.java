@@ -225,14 +225,20 @@ public class CCPUsportPage extends NCLEnvData {
                 }
 
                 case "AttachedFilesTabClick" -> {
+                   // nclWebActions.waitForElement("CCPUsportPage.AttachedFilesTab");
                     flag = nclWebActions.clickValue(value, getObjMap("CCPUsportPage.AttachedFilesTab"), key);
                 }
 
                 case "SelectFileClick" -> {
+         //           flag = nclWebActions.setValue(value, getObjMap("CCPUsportPage.SelectFile"), key);
                     flag = nclWebActions.setValue(value, getObjMap("CCPUsportPage.SelectFile"), key);
-                    //flag = nclWebActions.setValue(value, getObjMap("CCPUsportPage.SelectFile"), key);
-                }
-
+                    String[] b = value.split("\\|");
+                    try {
+                        flag = nclWebActions.setValue(b[1], getObjMap("CCPUsportPage.SelectFile",b[0]), key);
+                    }
+                    catch (Exception e) {
+                    }
+}
                 case "SubmitClick" -> {
                     //nclWebActions.waitForElement("CCPUsportPage.VesselRefNum");
                     flag = nclWebActions.clickValue(value, getObjMap("CCPUsportPage.Submit"), key);

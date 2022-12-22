@@ -37,6 +37,9 @@ public class OffloadeventsPage extends NCLEnvData {
                 case "offloadeventspg" -> {
                     flag = nclWebActions.clickValue(value, getObjMap("OffloadeventsPage.offloadeventspg"), key);
                 }
+                case "offloadresponsepg" -> {
+                    flag = nclWebActions.clickValue(value, getObjMap("OffloadeventsPage.offloadresponsepg"), key);
+                }
                 case "newoffloadeventsbtn" -> {
                     flag = nclWebActions.clickValue(value, getObjMap("OffloadeventsPage.newoffloadeventsbtn"), key);
                 }
@@ -61,14 +64,14 @@ public class OffloadeventsPage extends NCLEnvData {
                         }
                     }
                 }
-                case "vesselitinerarydrpdwntxtusportori" -> {
-                    value = NCLHooks.getRuntimeData(value);
+                case "vesselitinerarydrpdwntxtsingle" -> {
+                    //value = NCLHooks.getRuntimeData(value);
                     try {
                         Thread.sleep(5000);
-                        flag = nclWebActions.setValue(value, getObjMap("OffloadeventsPage.vesselitinerarydrpdwntxt"), key);
-                        Thread.sleep(5000);
-                        if (flag)
-                            flag = nclWebActions.clickValue(value, getObjMap("OffloadeventsPage.vesselitinerarydrpdwntxt1"), key);
+                        flag = nclWebActions.setValueAndPressEnterKey(value, getObjMap("OffloadeventsPage.vesselitinerarydrpdwntxt"), key);
+                    //    Thread.sleep(5000);
+                   //     if (flag)
+                    //////        flag = nclWebActions.(value, getObjMap("OffloadeventsPage.vesselitinerarydrpdwntxt1"), key);
                         Thread.sleep(5000);
                     } catch (InterruptedException e) {
                         throw new RuntimeException(e);
@@ -149,6 +152,7 @@ public class OffloadeventsPage extends NCLEnvData {
                     flag = nclWebActions.setValueAndPressEnterKey(value, getObjMap("OffloadeventsPage.existingdeleteoffloadevent"), key);
                 }
                 case "searchvalue" -> {
+                    value = NCLHooks.getRuntimeData(value);
                     flag = nclWebActions.setValueAndPressEnterKey(value, getObjMap("OffloadformsPage.existingsubmittedoffloadform"), key);
                 }
                 default -> {

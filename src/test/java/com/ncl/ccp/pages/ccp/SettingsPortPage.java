@@ -1,6 +1,7 @@
 package com.ncl.ccp.pages.ccp;
 
 import com.ncl.ccp.common.NCLEnvData;
+import com.ncl.ccp.common.NCLHooks;
 import com.ncl.ccp.common.NCLWebActions;
 import com.ncl.ccp.data.OrderedHashtable;
 import org.slf4j.Logger;
@@ -35,16 +36,20 @@ public class SettingsPortPage extends NCLEnvData {
                     flag = nclWebActions.clickValue(value, getObjMap("SettingsPortPage.portpage"), key);
                 }
                 case "portcodetxt" -> {
+                    value =  nclWebActions.randomValueGenerator();
                     flag = nclWebActions.setValue(value, getObjMap("SettingsPortPage.portcodetxt"), key);
+                    NCLHooks.setRuntimeData("SearchPortCodeValue", value);
                 }
                 case "portnametxt" -> {
+                    value =  nclWebActions.randomValueGenerator();
                     flag = nclWebActions.setValue(value, getObjMap("SettingsPortPage.portnametxt"), key);
                 }
                 case "portnamewodiacriticstxt" -> {
-                   flag = nclWebActions.setValue(value, getObjMap("SettingsPortPage.portnamewodiacriticstxt"), key);
+                    value =  nclWebActions.randomValueGenerator();
+                    flag = nclWebActions.setValue(value, getObjMap("SettingsPortPage.portnamewodiacriticstxt"), key);
                 }
                 case "countrydrpdwn" -> {
-                   flag = nclWebActions.clickValue(value, getObjMap("SettingsPortPage.countrydrpdwn"), key);
+                    flag = nclWebActions.clickValue(value, getObjMap("SettingsPortPage.countrydrpdwn"), key);
                 }
                 case "countrydrpdwntxt" -> {
                     String[] a = value.split("\\|");
@@ -55,11 +60,32 @@ public class SettingsPortPage extends NCLEnvData {
                     }
                 }
                 case "newportsavebtn" -> {
-                   flag = nclWebActions.clickValue(value, getObjMap("SettingsPortPage.newportsavebtn"), key);
+                    flag = nclWebActions.clickValue(value, getObjMap("SettingsPortPage.newportsavebtn"), key);
                 }
                 case "newportpg" -> {
-                   flag = nclWebActions.clickValue(value, getObjMap("SettingsPortPage.newportpg"), key);
+                    flag = nclWebActions.clickValue(value, getObjMap("SettingsPortPage.newportpg"), key);
                 }
+
+                case "searchportcode" -> {
+                    value = NCLHooks.getRuntimeData(value);
+                    flag = nclWebActions.setValueAndPressEnterKey(value, getObjMap("UsportPage.Searchdatavalue"), key);
+                }
+                case "verifydata" -> {
+                    value = NCLHooks.getRuntimeData(value);
+                    String a = value;
+                    flag = nclWebActions.clickValue(value, getObjMap("SettingsPortPage.verifydata", a), key);
+                }
+
+//                case "verifynewcreatordata" -> {
+//                    value = NCLHooks.getRuntimeData(value);
+//                    String a = value;
+//                    flag = nclWebActions.clickValue(value, getObjMap("SettingsPortPage.verifydata", a), key);
+//                }
+//                case "verifynewpurserdatadata" -> {
+//                    value = NCLHooks.getRuntimeData(value);
+//                    String a = value;
+//                    flag = nclWebActions.clickValue(value, getObjMap("SettingsPortPage.verifydata", a), key);
+//                }
                 default -> {
                     throw new RuntimeException("Field " + key + " is not defined in page " + sheetName + " class");
                 }

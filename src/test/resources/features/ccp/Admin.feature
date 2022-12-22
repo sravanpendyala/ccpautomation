@@ -20,6 +20,10 @@ Feature: verify admin roles functionality
 #    And enter data into "portcodetxt" in newport page
 #    And click on "newportsavebtn" button in newport page
 #    Then "portpage" page should be displayed in portpage
+ #   When search and edit the "searchportcode" in portpage
+
+
+
 
 #  @TC_002
 #  Scenario:  Create new user in the system with Creator role
@@ -43,6 +47,9 @@ Feature: verify admin roles functionality
 #    And enter data into "roletxtvalue" in new users page
 #    And click on "savebutton" in new user page
 #    Then "userspage" page should be displayed in usermanagement page
+#   When search and edit the "searchnewcreator" in portpage
+
+
 
 #  @TC_003
 #  Scenario:  Create new user in the system for Purser role
@@ -54,8 +61,6 @@ Feature: verify admin roles functionality
 #    And enter data into "companydrpdwntxt" in new users page
 #    And click on "sitedrpdwn" in new users page
 #    And enter data into "sitedrpdwntxt" in new users page
-#    And click on "departmentdrpdwn" in new users page
-#    And enter data into "departmentdrpdwntxt" in new users page
 #    And select "siterdbtn" option in new users page
 #    And enter data into "usernametxt" in new users page
 #    And enter data into "displaynametxt" in new users page
@@ -64,10 +69,12 @@ Feature: verify admin roles functionality
 #    And enter data into "confirmpasswordtxt" in new users page
 #    And enter data into "roletxt" in new users page
 #    And enter data into "rolepurser" in new users page
-#   And click on "savebutton" in new user page
+#    And click on "savebutton" in new user page
 #    Then "userspage" page should be displayed in usermanagement page
-#
-#
+#    When search and edit the "searchnewpurser" in portpage
+
+
+
 #  @TC_035
 #  Scenario:  Export Offload Form PDF
 #    ####################"offload form created before - data should be given to searchbar1
@@ -152,13 +159,13 @@ Feature: verify admin roles functionality
 #    And select "offloadformxls" option
 
 
-  @TC_044
-  Scenario:  Export offload forms draft
-  ############"Select any Offload Event Created Before with offload forms in proccessed statused"
-  ############"(Purser_GSAM_Released/CustomsApproved/AdminAccepted/BrokerSubmittedToCustoms)" .
-    When click on "Vesselsoffloads" option
-    And click on "offloadevent" option
-    And search and edit the "searchbar4"
-    #And click on "attachedoffloadforms" button
-    #And click "exportform1" option
-    And select "CE1302draft" option
+#  @TC_044
+#  Scenario:  Export offload forms draft
+#  ############"Select any Offload Event Created Before with offload forms in proccessed statused"
+#  ############"(Purser_GSAM_Released/CustomsApproved/AdminAccepted/BrokerSubmittedToCustoms)" .
+#    When click on "Vesselsoffloads" option
+#    And click on "offloadevent" option
+#    And search and edit the "searchbar4"
+#    #And click on "attachedoffloadforms" button
+#    #And click "exportform1" option
+#    And select "CE1302draft" option

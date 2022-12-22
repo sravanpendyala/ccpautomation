@@ -5,7 +5,9 @@ Feature: verify purser role functionality
     Given navigate to nclccp application
     When enter username, password and click on "PurserLogin" button
     Then homepage should be displayed "DashboardPg"
-#
+
+
+
 #  @TC_004
 #  Scenario: Itinerary for US port
 #    When click on "settingsbutton" in dashboard page
@@ -52,15 +54,17 @@ Feature: verify purser role functionality
 #    When Click on "applychanges" button
 #    And click on "closewindow" in new vessel itinerary form
 #    Then "itinerariespg" itineraries page should be displayed
-#  #@TC_006
-#  #Scenario: Create new Offload Event for US port
-#
+
+
+
+#@TC_006
+#Scenario: Create new Offload Event for non US port
 #    When click on "Vesselsoffloads" offload option
 #    And click on "offloadeventsLnk" option link
 #    Then "offloadeventspg" page should be displayed
 #    When Click on "newoffloadeventsbtn" button
 #    And Select "vesselitinerarydrpdwn" from vessel itinenary
-#    And Select "vesselitinerarydrpdwntxtusport" from vessel itinenary
+#    And Select "vesselitinerarydrpdwntxtnonusportsingle" from vessel itinenary
 #    And enter data into "portagentemailtxt" new offload events page
 #    And enter data into "portagentcompanytxt" new offload events page
 #    And Click on "savebutton" button
@@ -68,19 +72,25 @@ Feature: verify purser role functionality
 #    When click on "userprofile" in dashboard page
 #    And click on "logoutbutton" in dashboard page
 
-#
+
+
+
 #  @TC_007
-#  #vesselitinerarydrpdwntxtnonusport should be changed to for non US ports
-#  Scenario: Create new Offload Event
+#  Scenario: Create new Offload Event for non US port
 #    When click on "Vesselsoffloads" offload option
-#    And click on "offloadeventsLnk" option
-#    Then "offloadeventspg" page should be displayed
+#    And click on "offloadeventsLnk" option link
+ #   Then "offloadeventspg" page should be displayed
 #    When Click on "newoffloadeventsbtn" button
 #    And Select "vesselitinerarydrpdwn" from vessel itinenary
-#    And Select "vesselitinerarydrpdwntxtnonusport" from vessel itinenary
+#    And Select "vesselitinerarydrpdwntxtusportsingle" from vessel itinenary
 #    And Click on "savebutton" button
 #    Then "offloadeventspg" page should be displayed
-#
+#    When click on "userprofile" in dashboard page
+#    And click on "logoutbutton" in dashboard page
+
+
+
+
 #  @TC_016
 #  Scenario: Delete Offload Event
 #    When click on "Vesselsoffloads" offload option
@@ -106,16 +116,16 @@ Feature: verify purser role functionality
 #    And click on "Yesbutton" in confirm window
 #    Then "offloadeventspg" page should be displayed
 ##
-  @TC_018
-#  ###Vessel Reference no- submitted status should be given in testdata sheet as it is unique#####
-  Scenario: Offload Form with Status as PurserGSAMReleased
-    When click on "Vesselsoffloads" offload option
-    And click on "offloadformsLnk" link option
-   Then "offloadformspg" should be displayed
-    When search and edit the "existingreleasedoffloadform"
-    Then "editoffloadform" should be displayed
-    When click on "releasebutton" in offload forms tab
-    Then "purserupdatedstatus" should be displayed
+#  @TC_018
+##  ###Vessel Reference no- submitted status should be given in testdata sheet as it is unique#####
+#  Scenario: Offload Form with Status as PurserGSAMReleased
+#    When click on "Vesselsoffloads" offload option
+#    And click on "offloadformsLnk" link option
+#   Then "offloadformspg" should be displayed
+#    When search and edit the "existingreleasedoffloadform"
+#    Then "editoffloadform" should be displayed
+#    When click on "releasebutton" in offload forms tab
+#    Then "purserupdatedstatus" should be displayed
 #
 #    @TC_019
 #  Scenario: Offload Form with Status as PurserGSAMOnhold
@@ -128,14 +138,14 @@ Feature: verify purser role functionality
 #    When click on "onholdbutton" in offload forms tab
 #    Then "purserupdatedstatus" should be displayed
 #
-  @TC_020
-  Scenario: Offload Form with Status as Purser GSAM Rejected
-
-    When click on "Vesselsoffloads" offload option
-    And click on "offloadformsLnk" link option
-    Then "offloadformspg" should be displayed
-    When search and edit the "existingrejectedoffloadform"
-    Then "editoffloadform" should be displayed
-    When click on "rejectbutton" in offload forms tab
-    And enter data in to rejectreason, notes and click on "savebtn"
-    Then "purserupdatedstatus" should be displayed
+#  @TC_020
+#  Scenario: Offload Form with Status as Purser GSAM Rejected
+#
+#    When click on "Vesselsoffloads" offload option
+#    And click on "offloadformsLnk" link option
+#    Then "offloadformspg" should be displayed
+#    When search and edit the "existingrejectedoffloadform"
+#    Then "editoffloadform" should be displayed
+#    When click on "rejectbutton" in offload forms tab
+#    And enter data in to rejectreason, notes and click on "savebtn"
+#    Then "purserupdatedstatus" should be displayed

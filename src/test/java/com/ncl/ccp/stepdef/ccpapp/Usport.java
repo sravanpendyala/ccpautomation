@@ -22,8 +22,7 @@ public class Usport {
   usportPage.performActions(data);
  }
  @And("update number of {string} forms field dropdown")
- public void updateNumberOfFormsFieldDropdown(String data) {
-  usportPage.performActions(data);
+ public void updateNumberOfFormsFieldDropdown(String data) { usportPage.performActions(data);
  }
  @Then("updated offload event department response page should be displayed {string}")
  public void updatedOffloadEventDepartmentResponsePageShouldBeDisplayed(String data) {
@@ -33,9 +32,7 @@ public class Usport {
  // @When("click on {string} offload option")
  // public void clickOnOffloadOption(String data) { usportPage.performActions(data); }
  @When("enter {string} and click on search button")
- public void enterAndClickOnSearchButton(String data) {
-  usportPage.performActions(data);
- }
+ public void enterAndClickOnSearchButton(String data) { usportPage.performActions(data); }
 
  //mamatha//
  @When("click to {string} offload option")

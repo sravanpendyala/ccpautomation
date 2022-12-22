@@ -31,6 +31,8 @@ public class AmendEditOffloadFormPage extends NCLEnvData {
             switch (key) {
 
                 case "Amendbutton" -> {
+                    flag = nclWebActions.clickValue(value, getObjMap("UsportPage.maximizeicon"), key);
+                    if (flag)
                     flag = nclWebActions.clickValue(value, getObjMap("AmendEditOffloadFormPage.Amendbutton"), key);
                 }
                 case "Amendreason" -> {
@@ -129,6 +131,7 @@ public class AmendEditOffloadFormPage extends NCLEnvData {
                 case "CreateAmend" -> {
                     flag = nclWebActions.clickValue(value, getObjMap("AmendEditOffloadFormPage.CreateAmend"), key);
                 }
+                case "rejectreason" -> {    flag = nclWebActions.clickValue(value, getObjMap("ExportOfflaodFormPdf.Offloadform3"), key);}
                 default -> {
                     throw new RuntimeException("Field " + key + " is not defined in page " + sheetName + " class");
                 }

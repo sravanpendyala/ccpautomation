@@ -146,9 +146,7 @@ public class EditOffloadFormPage extends NCLEnvData {
                     }
                 }
                 case "selectfile" -> {
-
                     //System.getProperty("user.dir")+"\files\File1.pdf";
-
                     String[] a = value.split("\\|");
                     try {
                         flag = nclWebActions.clickValue(a[1], getObjMap("OffloadEventDocumentPage.selectfile",a[0]), key);
@@ -213,6 +211,9 @@ public class EditOffloadFormPage extends NCLEnvData {
                         Thread.sleep(5000);
                     } catch (Exception ex) {
                     }
+                }
+                case "Finalrejection" -> {
+                    flag = nclWebActions.clickValue(value, getObjMap("customsrejectPage.Finalrejection"), key);
                 }
                 default -> {
                     throw new RuntimeException("Field " + key + " is not defined in page " + sheetName + " class");

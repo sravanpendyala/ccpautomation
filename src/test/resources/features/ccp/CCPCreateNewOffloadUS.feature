@@ -1,32 +1,32 @@
-#@TCS
-#Feature: Create new offload form for US port
-#    @TC_009
-#    Scenario: Create new offload form for US port
-#      ### Offloadeventdropdownvalue, destinationAddressFields fields need to be changed
-#        Given navigate to nclccp application
-#        When enter username, password and click on "CreatorLogin" button
-#        Then homepage should be displayed "DashboardPg"
-#        When click on "vessels" offload options
-#        And click on "Offloadforms" offload options
-#        And click on "CreateNewOffloadform" buttons
-#        Then in new offloadform page Select "Offloadeventdropdown"
-#        Then enter "Offloadeventdropdownvalue" and click on enter
-#        When click on "Offloadpuropsedropdown" dropdownarrow
-#        And select "Offloadpuropse" option from the offload purpose dropdown
-#        And click on "saveOffloadForm" button in new offload form page
-#        And click on "destinationAddress" buttons
-#        And enter values in "destinationAddressFields" CompanyName,Address,Zipcode,city,country,state and click on save button
-#        Then destination address should be displayed "validateAddress"
-#        When click on "itemsTab" tab and then click on AddItem
-#        And enter Item details in "NewItem_Item" description,Use of Item and composite of material
-#        And enter Item measurement details in "NewItem_Measurements" package type,quantity,weight per each and weight per each UOM
-#        And enter Item manufacturer details in "NewItem_Manufacturer" country of origin
-#        And enter Item valuation details in "NewItem_Valuation" valuation type,AcquisitionPurchaseOrderNumber,AcquisitionDate,AcquisitionUnitCost and click on save
-#        When click on "notes" tab and click on Add Note
-#        Then enter "noteText" in text box and click on OK
-#        And added notes should get displayed "newNote"
-#        When click on "attachedFiles" tab and then click on SelectFile
-#        And click on "saveOffloadForm" button in edit offload form page
+@TCS
+Feature: Create new offload form for US port
+    @TC_009
+    Scenario: Create new offload form for US port
+      ### Offloadeventdropdownvalue, destinationAddressFields fields need to be changed
+        Given navigate to nclccp application
+        When enter username, password and click on "CreatorLogin" button
+        Then homepage should be displayed "DashboardPg"
+        When click on "vessels" offload options
+        And click on "Offloadforms" offload options
+        And click on "CreateNewOffloadform" buttons
+        Then in new offloadform page Select "Offloadeventdropdown"
+        Then enter "Offloadeventdropdownvalue" and click on enter
+        When click on "Offloadpuropsedropdown" dropdownarrow
+        And select "Offloadpuropse" option from the offload purpose dropdown
+        And click on "saveOffloadForm" button in new offload form page
+        And click on "destinationAddress" buttons
+        And enter values in "destinationAddressFields" CompanyName,Address,Zipcode,city,country,state and click on save button
+        Then destination address should be displayed "validateAddress"
+        When click on "itemsTab" tab and then click on AddItem
+        And enter Item details in "NewItem_Item" description,Use of Item and composite of material
+        And enter Item measurement details in "NewItem_Measurements" package type,quantity,weight per each and weight per each UOM
+        And enter Item manufacturer details in "NewItem_Manufacturer" country of origin
+        And enter Item valuation details in "NewItem_Valuation" valuation type,AcquisitionPurchaseOrderNumber,AcquisitionDate,AcquisitionUnitCost and click on save
+        When click on "notes" tab and click on Add Note
+        Then enter "noteText" in text box and click on OK
+        And added notes should get displayed "newNote"
+        When click on "attachedFiles" tab and then click on SelectFile
+       And click on "saveOffloadForm" button in edit offload form page
 #        And click on "submit" button in edit offload form page
 #        When enter offloadform in "searchbar1" and check the status
 #        Then Verify status "verifyStatusOffloadForm"
