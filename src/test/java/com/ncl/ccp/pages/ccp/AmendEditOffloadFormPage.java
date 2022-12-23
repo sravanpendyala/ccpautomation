@@ -38,6 +38,33 @@ public class AmendEditOffloadFormPage extends NCLEnvData {
                 case "Amendreason" -> {
                     flag = nclWebActions.setValue(value, getObjMap("AmendEditOffloadFormPage.Amendreason"), key);
                 }
+                case "Recallbutton" -> {
+                    flag = nclWebActions.clickValue(value, getObjMap("EditOffloadForm.maxbutton"), key);
+
+                    try {
+                        Thread.sleep(5000);
+                        flag = nclWebActions.clickValue(value, getObjMap("EditOffloadForm.Recallbutton"), key);
+                    } catch (Exception ex) {
+                    }
+                }
+                case "RecallReason" -> {
+                    flag = nclWebActions.clickValue(value, getObjMap("EditOffloadForm.RecallReason"), key);
+                }
+                case "NotesFields" -> {
+                    flag = nclWebActions.switchFrames(getObjMap("EditOffloadForm.frame"));
+                    try {
+                        Thread.sleep(8000);
+                        flag = nclWebActions.setValue(value, getObjMap("EditOffloadForm.NotesFields"), key);
+                        nclWebActions.webDriver.switchTo().defaultContent();
+                    } catch (Exception ex) {
+                    }
+                }
+                case "Desirednextstatus" -> {
+                    flag = nclWebActions.clickValue(value, getObjMap("EditOffloadForm.Desirednextstatus"), key);
+                }
+                case "Returnoffloadformbacktome" -> {
+                    flag = nclWebActions.setValue(value, getObjMap("EditOffloadForm.Returnoffloadformbacktome"), key);
+                }
 
                 case "Offloadform2" -> {
                     flag = nclWebActions.clickValue(value, getObjMap("AmendEditOffloadFormPage.Offloadform2"), key);
@@ -117,21 +144,22 @@ public class AmendEditOffloadFormPage extends NCLEnvData {
                 case "editicon" -> {
                     flag = nclWebActions.clickValue(value, getObjMap("EmailOffloadFormPage.editicon"), key);
                 }
-                case "NotesFields" -> {
-                    try {
-                        Thread.sleep(5000);
-                        flag = nclWebActions.switchFrames(getObjMap("AmendEditOffloadFormPage.frame"));
-                        flag = nclWebActions.setValue(value, getObjMap("AmendEditOffloadFormPage.NotesFields"), key);
-                        nclWebActions.webDriver.switchTo().defaultContent();
-                    } catch (Exception ex) {
-                    }
-                    //nclWebActions.webDriver.switchTo().frame("//iframe[@class='cke_wysiwyg_frame cke_reset']");
+//                case "NotesFields" -> {
+//                    try {
+//                        Thread.sleep(5000);
+//                        flag = nclWebActions.switchFrames(getObjMap("AmendEditOffloadFormPage.frame"));
+//                        flag = nclWebActions.setValue(value, getObjMap("AmendEditOffloadFormPage.NotesFields"), key);
+//                        nclWebActions.webDriver.switchTo().defaultContent();
+//                    } catch (Exception ex) {
+//                    }
+//                    //nclWebActions.webDriver.switchTo().frame("//iframe[@class='cke_wysiwyg_frame cke_reset']");
 
-                }
+                //}
                 case "CreateAmend" -> {
                     flag = nclWebActions.clickValue(value, getObjMap("AmendEditOffloadFormPage.CreateAmend"), key);
                 }
-                case "rejectreason" -> {    flag = nclWebActions.clickValue(value, getObjMap("ExportOfflaodFormPdf.Offloadform3"), key);}
+                case "rejectreason" -> {
+                    flag = nclWebActions.clickValue(value, getObjMap("ExportOfflaodFormPdf.Offloadform3"), key);}
                 default -> {
                     throw new RuntimeException("Field " + key + " is not defined in page " + sheetName + " class");
                 }

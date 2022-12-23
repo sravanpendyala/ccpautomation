@@ -76,7 +76,7 @@ Feature: verify purser role functionality
 
 
 #  @TC_007
-#  Scenario: Create new Offload Event for non US port
+#  Scenario: Create new Offload Event for US port
 #    When click on "Vesselsoffloads" offload option
 #    And click on "offloadeventsLnk" option link
  #   Then "offloadeventspg" page should be displayed
@@ -94,7 +94,7 @@ Feature: verify purser role functionality
 #  @TC_016
 #  Scenario: Delete Offload Event
 #    When click on "Vesselsoffloads" offload option
-#    And click on "offloadeventsLnk" option
+#    And click on "offloadeventsLnk" option link
 #    Then "offloadeventspg" page should be displayed
 #    When search and edit the "existingoffloadevent" searchbox
 #    And click on "deletebutton" in Offload Event tab
