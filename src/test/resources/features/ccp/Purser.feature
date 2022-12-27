@@ -101,21 +101,24 @@ Feature: verify purser role functionality
 #    And click on "Yesbutton" in confirm window
 #    Then "offloadeventspg" page should be displayed
 #    When click on "displayinactiverecords" button in offload events page
-#    Then "deletedoffloadevent" should be displayed
-#
+
+
+
 #  @TC_017
 #  Scenario: Undelete Offload Event
 #
 #    When click on "Vesselsoffloads" offload option
-#    And click on "offloadeventsLnk" option
+#    And click on "offloadeventsLnk" option link
 #    Then "offloadeventspg" page should be displayed
 #    When click on "displayinactiverecords" button in offload events page
-#    Then "deletedoffloadevent" should be displayed
 #    When search and edit the "existingoffloadevent"
 #    And click on "undeletebutton" in Offload Event tab
 #    And click on "Yesbutton" in confirm window
 #    Then "offloadeventspg" page should be displayed
-##
+
+
+
+
 #  @TC_018
 ##  ###Vessel Reference no- submitted status should be given in testdata sheet as it is unique#####
 #  Scenario: Offload Form with Status as PurserGSAMReleased
@@ -125,9 +128,10 @@ Feature: verify purser role functionality
 #    When search and edit the "existingreleasedoffloadform"
 #    Then "editoffloadform" should be displayed
 #    When click on "releasebutton" in offload forms tab
-#    Then "purserupdatedstatus" should be displayed
+#    Then "purserreleasedstatus" should be displayed
 #
 #    @TC_019
+#      #####Vessel Reference no- submitted status should be given in testdata sheet as it is unique#####
 #  Scenario: Offload Form with Status as PurserGSAMOnhold
 #
 #    When click on "Vesselsoffloads" offload option
@@ -136,9 +140,11 @@ Feature: verify purser role functionality
 #    When search and edit the "existingsubmittedoffloadform"
 #    Then "editoffloadform" should be displayed
 #    When click on "onholdbutton" in offload forms tab
-#    Then "purserupdatedstatus" should be displayed
-#
+#    And enter data in to rejectreason, notes and click on "savebtn"
+#    Then "purseronholdstatus" should be displayed
+
 #  @TC_020
+#  ####Vessel Reference no- submitted status should be given in testdata sheet as it is unique#####
 #  Scenario: Offload Form with Status as Purser GSAM Rejected
 #
 #    When click on "Vesselsoffloads" offload option
@@ -148,4 +154,4 @@ Feature: verify purser role functionality
 #    Then "editoffloadform" should be displayed
 #    When click on "rejectbutton" in offload forms tab
 #    And enter data in to rejectreason, notes and click on "savebtn"
-#    Then "purserupdatedstatus" should be displayed
+#    Then "purserrejectedstatus" should be displayed

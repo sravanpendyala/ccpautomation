@@ -70,22 +70,26 @@ public class OffloadformsPage extends NCLEnvData {
                     flag = nclWebActions.setValueAndPressEnterKey(value, getObjMap("OffloadeventsPage.existingdeleteoffloadevent"), key);
                 }
                 case "rejectbutton" -> {
-                    flag = nclWebActions.setValue(value, getObjMap("OffloadformsPage.rejectbutton"), key);
+                    flag = nclWebActions.clickValue(value, getObjMap("OffloadformsPage.rejectbutton"), key);
                 }
                 case "onholdbutton" -> {
-                    flag = nclWebActions.setValue(value, getObjMap("OffloadformsPage.onholdbutton"), key);
+                    flag = nclWebActions.clickValue(value, getObjMap("OffloadformsPage.onholdbutton"), key);
                 }
                 case "rejectreason" -> {
-                    flag = nclWebActions.setValue(value, getObjMap("OffloadformsPage.rejectreason"), key);
+                    flag = nclWebActions.setValue(value, getObjMap("CCPUsportPage.AddRejectReason"), key);
                 }
                 case "notes" -> {
                     flag = nclWebActions.switchFrames("//iframe[@class='cke_wysiwyg_frame cke_reset']");
-                  if(flag)
-                      flag = nclWebActions.setValue(value, getObjMap("OffloadformsPage.notes"), key);
-                    nclWebActions.webDriver.switchTo().defaultContent();
+                    if (flag) {
+                        flag = nclWebActions.setValue(value, getObjMap("CCPUsportPage.AddRejectNote"), key);
+                        nclWebActions.webDriver.switchTo().defaultContent();
+                    }
                 }
                 case "savebtn" -> {
                     flag = nclWebActions.clickValue(value, getObjMap("OffloadformsPage.savebtn"), key);
+                }
+                case "deletedoffloadevent" -> {
+                    flag = nclWebActions.clickValue(value, getObjMap("OffloadeventsPage.deletedoffloadevent"), key);
                 }
 
                 default -> {

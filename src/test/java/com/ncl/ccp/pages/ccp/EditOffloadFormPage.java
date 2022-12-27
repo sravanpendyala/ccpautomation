@@ -176,6 +176,7 @@ public class EditOffloadFormPage extends NCLEnvData {
                     try {
                         Thread.sleep(5000);
                         flag = nclWebActions.clickValue(value, getObjMap("pdfExportOffloadPage.offloadformpdf1"), key);
+                        Thread.sleep(6000);
                     } catch (Exception ex) {
                     }
                 }
@@ -183,6 +184,7 @@ public class EditOffloadFormPage extends NCLEnvData {
                     try {
                         Thread.sleep(5000);
                         flag = nclWebActions.selectOption(value, getObjMap("ExportOfflaodFormPdf.offloadformpdf"), key);
+                        Thread.sleep(6000);
                     } catch (Exception ex) {
                     }
                 }
@@ -201,6 +203,7 @@ public class EditOffloadFormPage extends NCLEnvData {
                     try {
                         Thread.sleep(5000);
                         flag = nclWebActions.clickValue(value, getObjMap("pdfExportOffloadPage.offloadformpdf1"), key);
+                        Thread.sleep(6000);
                     } catch (Exception ex) {
                     }
                 }

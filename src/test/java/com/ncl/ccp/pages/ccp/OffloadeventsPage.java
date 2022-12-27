@@ -136,15 +136,20 @@ public class OffloadeventsPage extends NCLEnvData {
                     flag = nclWebActions.clickValue(value, getObjMap("OffloadeventsPage.savebutton"), key);
                     if (flag) {
                         try {
-                            Thread.sleep(10000);
+                            Thread.sleep(8000);
                         } catch (InterruptedException e) {
                             throw new RuntimeException(e);
                         }
                     }
                 }
                 case "displayinactiverecords" -> {
-                    flag = nclWebActions.clickValue(value, getObjMap("OffloadeventsPage.displayinactiverecords"), key);
-                }
+                   try {
+                            Thread.sleep(5000);
+                            flag = nclWebActions.clickValue(value, getObjMap("OffloadeventsPage.displayinactiverecords"), key);
+                        } catch (InterruptedException e) {
+                            throw new RuntimeException(e);
+                        }
+                    }
                 case "deletedoffloadevent" -> {
                     flag = nclWebActions.clickValue(value, getObjMap("OffloadeventsPage.deletedoffloadevent"), key);
                 }

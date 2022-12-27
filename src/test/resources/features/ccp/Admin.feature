@@ -74,7 +74,7 @@ Feature: verify admin roles functionality
 #    When search and edit the "searchnewpurser" in portpage
 
 
-
+#
 #  @TC_035
 #  Scenario:  Export Offload Form PDF
 #    ####################"offload form created before - data should be given to searchbar1
@@ -85,19 +85,17 @@ Feature: verify admin roles functionality
 #    And click on "exportform1" button
 #    And click "offloadformpdf" option for exportform button
 
-
-
-#  @TC_036
-#  Scenario:  Export customs form PDF
-#    ###########"offload form created before - data should be given to searchbar1
-#    And click on "Vesselsoffloads" option
-#    When click on "Offloadforms3" option
-#    When enter value in "searchbar1" and search
-#    When click on the "edit4" for the offload event created previously
-#    And click on "exportform1" button
-#    And click "customsformpdf" option for exportform button
-
-
+  @TC_036
+  Scenario:  Export customs form PDF
+    ###########"offload form created before - data should be given to searchbar1
+    And click on "Vesselsoffloads" option
+    When click on "Offloadforms3" option
+    When enter value in "searchbar1" and search
+    When click on the "edit4" for the offload event created previously
+    And click on "exportform1" button
+    And click "customsformpdf" option for exportform button
+#
+#
 #  @TC_037
 #  Scenario:  Export offloadformxls
 #    ############"offload form created before - data should be given to searchbar1
@@ -107,8 +105,7 @@ Feature: verify admin roles functionality
 #    When click on the "edit4" for the offload event created previously
 #    And click on "exportform1" button
 #    And click "offloadformxls" option for exportform button
-
-
+#
 #  @TC_038
 #  Scenario:  Export customsformxls
 #    #################"offload form created before - data should be given to searchbar1
@@ -118,8 +115,8 @@ Feature: verify admin roles functionality
 #    When click on the "edit4" for the offload event created previously
 #    And click on "exportform1" button
 #    And click "customsformxls" option for exportform button
-
-
+#
+#
 # @TC_039
 #  Scenario:  Export Offload Form PDF
 #  ############"offload form created before - data should be given to searchbar1
@@ -133,8 +130,9 @@ Feature: verify admin roles functionality
 #    And click "offloadformpdf5" option for email
 #    And Enter "to" option for email button
 #    And Enter "Message" option for email button
-##
-
+#   And click on "send" button
+#
+#
 #  @TC_040
 #  Scenario:  Export offload forms in pdf
 #  ##############"Select any Offload Event Created Before with offload forms in proccessed statused"
@@ -145,8 +143,8 @@ Feature: verify admin roles functionality
 #    And click on "attachedoffloadforms" button
 #    And click "exportform1" option
 #    And click "offloadformpdf" option
-
-
+#
+#
 #  @TC_041
 #  Scenario:  Export offload forms in pdf
 #  ##############"Select any Offload Event Created Before with offload forms in proccessed statused"
@@ -157,8 +155,8 @@ Feature: verify admin roles functionality
 #    And click on "attachedoffloadforms" button
 #    And click "exportform1" option
 #    And select "offloadformxls" option
-
-
+#
+#
 #  @TC_044
 #  Scenario:  Export offload forms draft
 #  ############"Select any Offload Event Created Before with offload forms in proccessed statused"
