@@ -85,17 +85,19 @@ Feature: verify admin roles functionality
 #    And click on "exportform1" button
 #    And click "offloadformpdf" option for exportform button
 
-  @TC_036
-  Scenario:  Export customs form PDF
-    ###########"offload form created before - data should be given to searchbar1
-    And click on "Vesselsoffloads" option
-    When click on "Offloadforms3" option
-    When enter value in "searchbar1" and search
-    When click on the "edit4" for the offload event created previously
-    And click on "exportform1" button
-    And click "customsformpdf" option for exportform button
+#  @TC_036
+#  Scenario:  Export customs form PDF
+#    ###########"offload form created before - data should be given to searchbar1
+#    And click on "Vesselsoffloads" option
+#    When click on "Offloadforms3" option
+#    When enter value in "searchbar1" and search
+#    When click on the "edit4" for the offload event created previously
+#    And click on "exportform1" button
+#    And click "customsformpdf" option for exportform button
 #
-#
+
+
+
 #  @TC_037
 #  Scenario:  Export offloadformxls
 #    ############"offload form created before - data should be given to searchbar1
