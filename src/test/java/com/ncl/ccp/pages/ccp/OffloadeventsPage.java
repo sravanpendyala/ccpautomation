@@ -69,9 +69,9 @@ public class OffloadeventsPage extends NCLEnvData {
                     try {
                         Thread.sleep(5000);
                         flag = nclWebActions.setValueAndPressEnterKey(value, getObjMap("OffloadeventsPage.vesselitinerarydrpdwntxt"), key);
-                    //    Thread.sleep(5000);
-                   //     if (flag)
-                    //////        flag = nclWebActions.(value, getObjMap("OffloadeventsPage.vesselitinerarydrpdwntxt1"), key);
+                        //    Thread.sleep(5000);
+                        //     if (flag)
+                        //////        flag = nclWebActions.(value, getObjMap("OffloadeventsPage.vesselitinerarydrpdwntxt1"), key);
                         Thread.sleep(5000);
                     } catch (InterruptedException e) {
                         throw new RuntimeException(e);
@@ -94,7 +94,7 @@ public class OffloadeventsPage extends NCLEnvData {
 //                        } catch (InterruptedException e) {
 //                            throw new RuntimeException(e);
 //                        }}
-}                case "portagentemailtxt" -> {
+                }                case "portagentemailtxt" -> {
                     flag = nclWebActions.setValue(value, getObjMap("OffloadeventsPage.portagentemailtxt"), key);
                 }
                 case "portagentcompanytxt" -> {
@@ -143,13 +143,14 @@ public class OffloadeventsPage extends NCLEnvData {
                     }
                 }
                 case "displayinactiverecords" -> {
-                   try {
-                            Thread.sleep(5000);
-                            flag = nclWebActions.clickValue(value, getObjMap("OffloadeventsPage.displayinactiverecords"), key);
-                        } catch (InterruptedException e) {
-                            throw new RuntimeException(e);
-                        }
+                    try {
+                        Thread.sleep(5000);
+                        flag = nclWebActions.clickValue(value, getObjMap("OffloadeventsPage.displayinactiverecords"), key);
+                        Thread.sleep(5000);
+                    } catch (InterruptedException e) {
+                        throw new RuntimeException(e);
                     }
+                }
                 case "deletedoffloadevent" -> {
                     flag = nclWebActions.clickValue(value, getObjMap("OffloadeventsPage.deletedoffloadevent"), key);
                 }

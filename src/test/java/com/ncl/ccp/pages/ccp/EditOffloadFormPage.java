@@ -107,14 +107,13 @@ public class EditOffloadFormPage extends NCLEnvData {
                 }
 
                 case "NotesFields" -> {
-                    //String b = "test";
-//                    nclWebActions.webDriver.switchTo().frame("//iframe[@allowtransparency='true')]");
-                    //nclWebActions.webDriver.switchTo().frame(nclWebActions.webDriver.findElement(By.xpath("//iframe[@class='cke_wysiwyg_frame cke_reset']")));
-                    flag = nclWebActions.switchFrames("//iframe[@class='cke_wysiwyg_frame cke_reset']");
-                    if (flag)
-                        //nclWebActions.webDriver.switchTo().frame(nclWebActions.webDriver.findElement(By.xpath("//html[@dir='ltr']")));
+                    try {
+                        Thread.sleep(8000);
+                        flag = nclWebActions.switchFrames(getObjMap("EditOffloadForm.frame"));
                         flag = nclWebActions.setValue(value, getObjMap("EditOffloadForm.NotesFields"), key);
-                    nclWebActions.webDriver.switchTo().defaultContent();
+                        nclWebActions.webDriver.switchTo().defaultContent();
+                    } catch (Exception ex) {
+                    }
                 }
                 case "Desirednextstatus" -> {
                     flag = nclWebActions.clickValue(value, getObjMap("EditOffloadForm.Desirednextstatus"), key);
@@ -146,23 +145,8 @@ public class EditOffloadFormPage extends NCLEnvData {
                     } catch (Exception ex) {
                     }
                 }
-                case "selectfile" -> {
-                    //System.getProperty("user.dir")+"\files\File1.pdf";
-                    String[] a = value.split("\\|");
-                    try {
-                        flag = nclWebActions.clickValue(a[1], getObjMap("OffloadEventDocumentPage.selectfile",a[0]), key);
-                    }
-                    catch (Exception e) {
-                    }
-                }
-                case "selectfile2" -> {
-                    String[] b = value.split("\\|");
-                    try {
-                        flag = nclWebActions.clickValue(b[1], getObjMap("FileEventDocumentPage.selectfile2",b[0]), key);
-                    }
-                    catch (Exception e) {
-                    }
-                }
+                case "selectfile" -> {    flag = nclWebActions.setValue(value, getObjMap("OffloadEventDocumentPage.selectfile"), key);}
+                case "selectfile2" -> {    flag = nclWebActions.setValue(value, getObjMap("FileEventDocumentPage.selectfile2"), key);}
                 case "CE1302draft" -> {
                     try {
                         Thread.sleep(5000);
@@ -183,8 +167,9 @@ public class EditOffloadFormPage extends NCLEnvData {
                 case "offloadformpdf" -> {
                     try {
                         Thread.sleep(5000);
-                        flag = nclWebActions.selectOption(value, getObjMap("ExportOfflaodFormPdf.offloadformpdf"), key);
-                        Thread.sleep(6000);
+                        flag = nclWebActions.clickValue(value, getObjMap("ExportOfflaodFormPdf.offloadformpdf"), key);
+                        Thread.sleep(5000);
+
                     } catch (Exception ex) {
                     }
                 }
@@ -199,23 +184,24 @@ public class EditOffloadFormPage extends NCLEnvData {
                 case "offloadformxls" -> {
                     //nclWebActions.webDriver.findElement(By.xpath("//li[@title='Export Offload Form in Excel format')]"));
                     flag = nclWebActions.clickValue(value, getObjMap("OffloadExportFormXl.offloadformxls"), key);
-
-                    try {
-                        Thread.sleep(5000);
-                        flag = nclWebActions.clickValue(value, getObjMap("pdfExportOffloadPage.offloadformpdf1"), key);
-                        Thread.sleep(6000);
-                    } catch (Exception ex) {
-                    }
+                    if (flag)
+                        try {
+                            Thread.sleep(5000);
+                            flag = nclWebActions.clickValue(value, getObjMap("pdfExportOffloadPage.offloadformpdf1"), key);
+                            Thread.sleep(5000);
+                        } catch (Exception ex) {
+                        }
                 }
                 case "customsformxls" -> {
                     try{
                         Thread.sleep(50000);
                         //nclWebActions.webDriver.findElement(By.xpath("//li[@title='Export Offload Form in Excel format')]"));
-                        flag = nclWebActions.clickValue(value, getObjMap("OffloadExportFormXl.customsformxls"), key);
+                        flag = nclWebActions.clickValue(value, getObjMap("ExportCustomsFormXl.customsformxls"), key);
                         Thread.sleep(5000);
                     } catch (Exception ex) {
                     }
                 }
+
                 case "Finalrejection" -> {
                     flag = nclWebActions.clickValue(value, getObjMap("customsrejectPage.Finalrejection"), key);
                 }

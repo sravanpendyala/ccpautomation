@@ -27,6 +27,6 @@ Feature: Validate creator role testcases
         When search and edit the "searchrecallinit"
         When Click on "Recallbutton" in the offload
         Then fill the "RecallReason" in the window
-        And fill the "NotesFields" in the amend
+        And fill the "NotesFields" in the window
         And click on "DesiredNextStatus"in window
         And click on "Returnoffloadformbacktome"

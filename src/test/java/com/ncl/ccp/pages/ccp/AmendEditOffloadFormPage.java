@@ -58,6 +58,14 @@ public class AmendEditOffloadFormPage extends NCLEnvData {
                         nclWebActions.webDriver.switchTo().defaultContent();
                     } catch (Exception ex) {
                     }
+                }case "NotesFields2" -> {
+                    try {
+                        Thread.sleep(8000);
+                        flag = nclWebActions.switchFrames(getObjMap("customsrejectPage.frame"));
+                        flag = nclWebActions.setValue(value, getObjMap("customsrejectPage.NotesFields2"), key);
+                        nclWebActions.webDriver.switchTo().defaultContent();
+                    } catch (Exception ex) {
+                    }
                 }
                 case "Desirednextstatus" -> {
                     flag = nclWebActions.clickValue(value, getObjMap("EditOffloadForm.Desirednextstatus"), key);
@@ -160,7 +168,7 @@ public class AmendEditOffloadFormPage extends NCLEnvData {
                 }
                 case "rejectreason" -> {
                     flag = nclWebActions.clickValue(value, getObjMap("ExportOfflaodFormPdf.Offloadform3"), key);}
-                default -> {
+                 default -> {
                     throw new RuntimeException("Field " + key + " is not defined in page " + sheetName + " class");
                 }
             }

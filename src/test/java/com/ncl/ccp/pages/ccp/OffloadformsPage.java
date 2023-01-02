@@ -91,7 +91,12 @@ public class OffloadformsPage extends NCLEnvData {
                 case "deletedoffloadevent" -> {
                     flag = nclWebActions.clickValue(value, getObjMap("OffloadeventsPage.deletedoffloadevent"), key);
                 }
-
+                case "searchbar7" -> {
+                    flag = nclWebActions.setValueAndPressEnterKey(value, getObjMap("OffloadstatuscustomsapprovePage.searchbar7"), key);
+                }
+                case "searchbar8" -> {
+                    flag = nclWebActions.setValueAndPressEnterKey(value, getObjMap("customsrejectPage.searchbar8"), key);
+                }
                 default -> {
                     throw new RuntimeException("Field " + key + " is not defined in page " + sheetName + " class");
                 }

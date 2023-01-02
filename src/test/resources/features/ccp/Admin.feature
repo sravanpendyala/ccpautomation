@@ -93,7 +93,7 @@ Feature: verify admin roles functionality
 #    When enter value in "searchbar1" and search
 #    When click on the "edit4" for the offload event created previously
 #    And click on "exportform1" button
-#    And click "customsformpdf" option for exportform button
+   And click "customsformpdf" option for exportform button
 #
 
 
@@ -133,8 +133,8 @@ Feature: verify admin roles functionality
 #    And Enter "to" option for email button
 #    And Enter "Message" option for email button
 #   And click on "send" button
-#
-#
+
+
 #  @TC_040
 #  Scenario:  Export offload forms in pdf
 #  ##############"Select any Offload Event Created Before with offload forms in proccessed statused"
@@ -144,7 +144,7 @@ Feature: verify admin roles functionality
 #    When search and edit the "searchbar3"
 #    And click on "attachedoffloadforms" button
 #    And click "exportform1" option
-#    And click "offloadformpdf" option
+   And click "offloadformpdf" option
 #
 #
 #  @TC_041
@@ -168,4 +168,4 @@ Feature: verify admin roles functionality
 #    And search and edit the "searchbar4"
 #    #And click on "attachedoffloadforms" button
 #    #And click "exportform1" option
-#    And select "CE1302draft" option
+   And select "CE1302draft" option
