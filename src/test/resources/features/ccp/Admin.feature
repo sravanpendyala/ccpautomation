@@ -74,7 +74,7 @@ Feature: verify admin roles functionality
 #    When search and edit the "searchnewpurser" in portpage
 
 
-#
+
 #  @TC_035
 #  Scenario:  Export Offload Form PDF
 #    ####################"offload form created before - data should be given to searchbar1
@@ -93,8 +93,8 @@ Feature: verify admin roles functionality
 #    When enter value in "searchbar1" and search
 #    When click on the "edit4" for the offload event created previously
 #    And click on "exportform1" button
-   And click "customsformpdf" option for exportform button
-#
+#   And click "customsformpdf" option for exportform button
+##
 
 
 
@@ -107,7 +107,7 @@ Feature: verify admin roles functionality
 #    When click on the "edit4" for the offload event created previously
 #    And click on "exportform1" button
 #    And click "offloadformxls" option for exportform button
-#
+
 #  @TC_038
 #  Scenario:  Export customsformxls
 #    #################"offload form created before - data should be given to searchbar1
@@ -117,10 +117,10 @@ Feature: verify admin roles functionality
 #    When click on the "edit4" for the offload event created previously
 #    And click on "exportform1" button
 #    And click "customsformxls" option for exportform button
-#
+
 #
 # @TC_039
-#  Scenario:  Export Offload Form PDF
+#  Scenario:  Send offload form by email
 #  ############"offload form created before - data should be given to searchbar1
 #    ############ to address srpedyala@ncl.com
 #    ######### message would be something like ex: TEST
@@ -144,9 +144,9 @@ Feature: verify admin roles functionality
 #    When search and edit the "searchbar3"
 #    And click on "attachedoffloadforms" button
 #    And click "exportform1" option
-   And click "offloadformpdf" option
-#
-#
+#   And click "offloadformpdf" option
+###
+##
 #  @TC_041
 #  Scenario:  Export offload forms in pdf
 #  ##############"Select any Offload Event Created Before with offload forms in proccessed statused"
@@ -157,7 +157,7 @@ Feature: verify admin roles functionality
 #    And click on "attachedoffloadforms" button
 #    And click "exportform1" option
 #    And select "offloadformxls" option
-#
+##
 #
 #  @TC_044
 #  Scenario:  Export offload forms draft
@@ -168,4 +168,4 @@ Feature: verify admin roles functionality
 #    And search and edit the "searchbar4"
 #    #And click on "attachedoffloadforms" button
 #    #And click "exportform1" option
-   And select "CE1302draft" option
+#   And select "CE1302draft" option

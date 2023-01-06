@@ -37,7 +37,7 @@ public class DashboardPage extends NCLEnvData {
                 case "exportform1" -> {
                     try {
                         Thread.sleep(3000);
-                        flag = nclWebActions.selectOption(value, getObjMap("ExportOfflaodFormPdf.exportform1"), key);
+                        flag = nclWebActions.clickValue(value, getObjMap("ExportOfflaodFormPdf.exportform1"), key);
 
                     } catch (Exception e) {
                     }
@@ -141,6 +141,10 @@ public class DashboardPage extends NCLEnvData {
                 case "offloadformsLnk" -> {
                     flag = nclWebActions.clickValue(value, getObjMap("DashboardPage.offloadformsLnk"), key);
                 }
+                case "send" -> {
+                    flag = nclWebActions.clickValue(value, getObjMap("EmailOffloadForm.send"), key);
+                }
+
                 default -> {
                     throw new RuntimeException("Field " + key + " is not defined in page " + sheetName + " class");
                 }

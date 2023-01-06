@@ -83,40 +83,53 @@ public class EditOffloadFormPage extends NCLEnvData {
 
                 case "Message" -> {
                     //flag = nclWebActions.setValueAndPressEnterKey(value, getObjMap("EmailOffloadForm.Message"), key);
-                    try {
-                        Thread.sleep(5000);
-
-                        flag = nclWebActions.switchFrames(getObjMap("EmailOffloadForm.frame"));
-                        //nclWebActions.webDriver.switchTo().frame("//iframe[@class='cke_wysiwyg_frame cke_reset']");
-                        Thread.sleep(5000);
-                        flag = nclWebActions.setValue(value, getObjMap("EmailOffloadForm.Message"), key);
-                        Thread.sleep(5000);
+                    flag = nclWebActions.switchFrames("//iframe[@class='cke_wysiwyg_frame cke_reset']");
+                    if (flag) {
+                        flag = nclWebActions.setValue(value, getObjMap("CCPUsportPage.AddRejectNote"), key);
                         nclWebActions.webDriver.switchTo().defaultContent();
-                    } catch (Exception ex) {
                     }
+                }
+//                    try {
+//                        Thread.sleep(5000);
+//
+//                        flag = nclWebActions.switchFrames(getObjMap("EmailOffloadForm.frame"));
+//                        //nclWebActions.webDriver.switchTo().frame("//iframe[@class='cke_wysiwyg_frame cke_reset']");
+//                        Thread.sleep(5000);
+//                        flag = nclWebActions.setValue(value, getObjMap("EmailOffloadForm.Message"), key);
+//                        Thread.sleep(5000);
+//                        nclWebActions.webDriver.switchTo().defaultContent();
+//                    } catch (Exception ex) {
+//                    }
 
                     /*if (flag)
                         nclWebActions.webDriver.switchTo().frame(nclWebActions.webDriver.findElement(By.xpath("//html[@dir='ltr']")));
                         flag = nclWebActions.setValue(value, getObjMap("EmailOffloadForm.Message"), key);
                     nclWebActions.webDriver.switchTo().defaultContent();*/
 
-                }
+
                 case "RecallReason" -> {
                     //String a = "sravan.bar";
                     flag = nclWebActions.setValue(value, getObjMap("EditOffloadForm.RecallReason"), key);
                 }
 
                 case "NotesFields" -> {
-                    try {
-                        Thread.sleep(8000);
-                        flag = nclWebActions.switchFrames(getObjMap("EditOffloadForm.frame"));
-                        flag = nclWebActions.setValue(value, getObjMap("EditOffloadForm.NotesFields"), key);
+                    flag = nclWebActions.switchFrames("//iframe[@class='cke_wysiwyg_frame cke_reset']");
+                    if (flag) {
+                        flag = nclWebActions.setValue(value, getObjMap("CCPUsportPage.AddRejectNote"), key);
                         nclWebActions.webDriver.switchTo().defaultContent();
-                    } catch (Exception ex) {
                     }
                 }
                 case "Desirednextstatus" -> {
-                    flag = nclWebActions.clickValue(value, getObjMap("EditOffloadForm.Desirednextstatus"), key);
+
+                    try {
+                        Thread.sleep(2000);
+//                        flag = nclWebActions.clickValue(value, getObjMap("EditOffloadForm1.Desirednextstatus"), key);
+//                        if (flag)
+                            flag = nclWebActions.clickValue(value, getObjMap("EditOffloadForm1.Desirednextstatus"), key);
+                        Thread.sleep(3000);
+                    }catch (Exception ex) {
+                    }
+
                 }
                 case "Returnoffloadformbacktome" -> {
                     flag = nclWebActions.clickValue(value, getObjMap("EditOffloadForm.Returnoffloadformbacktome"), key);
@@ -194,7 +207,7 @@ public class EditOffloadFormPage extends NCLEnvData {
                 }
                 case "customsformxls" -> {
                     try{
-                        Thread.sleep(50000);
+                        Thread.sleep(5000);
                         //nclWebActions.webDriver.findElement(By.xpath("//li[@title='Export Offload Form in Excel format')]"));
                         flag = nclWebActions.clickValue(value, getObjMap("ExportCustomsFormXl.customsformxls"), key);
                         Thread.sleep(5000);

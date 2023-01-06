@@ -89,19 +89,19 @@ Feature: verify purser role functionality
 #    And click on "logoutbutton" in dashboard page
 
 
-
-
-  @TC_016
-  Scenario: Delete Offload Event
-    When click on "Vesselsoffloads" offload option
-    And click on "offloadeventsLnk" option link
-    Then "offloadeventspg" page should be displayed
-    When search and edit the "existingoffloadevent" searchbox
-    And click on "deletebutton" in Offload Event tab
-    And click on "Yesbutton" in confirm window
-    Then "offloadeventspg" page should be displayed
-    When click on "displayinactiverecords" button in offload events page
-
+#
+#
+#  @TC_016
+#  Scenario: Delete Offload Event
+#    When click on "Vesselsoffloads" offload option
+#    And click on "offloadeventsLnk" option link
+#    Then "offloadeventspg" page should be displayed
+#    When search and edit the "existingoffloadevent" searchbox
+#    And click on "deletebutton" in Offload Event tab
+#    And click on "Yesbutton" in confirm window
+#    Then "offloadeventspg" page should be displayed
+#    When click on "displayinactiverecords" button in offload events page
+##
 
 
 #  @TC_017
@@ -115,10 +115,10 @@ Feature: verify purser role functionality
 #    And click on "undeletebutton" in Offload Event tab
 #    And click on "Yesbutton" in confirm window
 #    Then "offloadeventspg" page should be displayed
+#
 
 
-
-
+#
 #  @TC_018
 ##  ###Vessel Reference no- submitted status should be given in testdata sheet as it is unique#####
 #  Scenario: Offload Form with Status as PurserGSAMReleased

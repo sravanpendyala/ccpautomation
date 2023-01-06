@@ -51,14 +51,22 @@ public class AmendEditOffloadFormPage extends NCLEnvData {
                     flag = nclWebActions.clickValue(value, getObjMap("EditOffloadForm.RecallReason"), key);
                 }
                 case "NotesFields" -> {
-                    flag = nclWebActions.switchFrames(getObjMap("EditOffloadForm.frame"));
-                    try {
-                        Thread.sleep(8000);
-                        flag = nclWebActions.setValue(value, getObjMap("EditOffloadForm.NotesFields"), key);
+                    flag = nclWebActions.switchFrames("//iframe[@class='cke_wysiwyg_frame cke_reset']");
+                    if (flag) {
+                        flag = nclWebActions.setValue(value, getObjMap("CCPUsportPage.AddRejectNote"), key);
                         nclWebActions.webDriver.switchTo().defaultContent();
-                    } catch (Exception ex) {
                     }
-                }case "NotesFields2" -> {
+                }
+//
+//                    flag = nclWebActions.switchFrames(getObjMap("EditOffloadForm.frame"));
+//                    try {
+//                        Thread.sleep(8000);
+//                        flag = nclWebActions.setValue(value, getObjMap("EditOffloadForm.NotesFields"), key);
+//                        nclWebActions.webDriver.switchTo().defaultContent();
+//                    } catch (Exception ex) {
+//                    }
+
+                case "NotesFields2" -> {
                     try {
                         Thread.sleep(8000);
                         flag = nclWebActions.switchFrames(getObjMap("customsrejectPage.frame"));
@@ -167,8 +175,10 @@ public class AmendEditOffloadFormPage extends NCLEnvData {
                     flag = nclWebActions.clickValue(value, getObjMap("AmendEditOffloadFormPage.CreateAmend"), key);
                 }
                 case "rejectreason" -> {
-                    flag = nclWebActions.clickValue(value, getObjMap("ExportOfflaodFormPdf.Offloadform3"), key);}
-                 default -> {
+                    flag = nclWebActions.setValue(value, getObjMap("CCPUsportPage.AddRejectReason"), key);
+                }
+
+                default -> {
                     throw new RuntimeException("Field " + key + " is not defined in page " + sheetName + " class");
                 }
             }
